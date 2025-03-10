@@ -14,20 +14,20 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 </head>
 
-<body class="bg-black">
+<body class="bg-black" id="home">
 
     <!-- header start -->
 
-    <div class="offcanvas offcanvas-start text-bg-dark" data-bs-scroll="true" tabindex="-1"
-        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas offcanvas-end text-bg-dark" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+        aria-labelledby="offcanvasWithBothOptionsLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body">
+        <div class="offcanvas-body" style="background-color: transparent;">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                 <li class="nav-item" data-bs-dismiss="offcanvas">
-                    <a class="nav-link active text-primary" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active text-primary" aria-current="page" href="#home">Home</a>
                 </li>
                 <li class="nav-item" data-bs-dismiss="offcanvas">
                     <a class="nav-link text-white text-primary-hover" href="#about">About</a>
@@ -64,7 +64,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
                         <li class="nav-item">
-                            <a class="nav-link active text-primary" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active text-primary" aria-current="page" href="#home">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white text-primary-hover" aria-current="page"
@@ -96,38 +96,36 @@
     </header>
     <!-- header end -->
     <!-- banner start -->
-    <section class="banner d-flex overflow-hidden">
+    <section class="banner d-flex overflow-hidden pt-5 pb-4">
         <div class="container position-relative pb-5">
             <div class="col-12">
-                <p class="bannerTitle user-select-none text-black lh-1">
+                <p class="bannerTitle user-select-none lh-1">
                     Developing <span class="lead text-white">a Better</span><br>
                     World <span class="lead text-white">Today</span>
                 </p>
-                <p class="text-white-50 user-select-none">
+                <p class="text-white-50 user-select-none mb-5 pb-3">
                     Welcome to our world of endless imagination and boundless creativity. Together, let's embark on a
                     remarkable journey where dreams become tangible realities.
                 </p>
-                <a href="#about" class="text-decoration-none text-white">
-                    <button class="bannerButton mb-5 mt-3">
-                        <span class="text-container">
-                            <span class="text">WHAT WE DO</span>
-                        </span>
-                    </button>
-                </a>
+
+                <a href="#about" class="Button text-decoration-none text-black border-white  mb-5">WHAT WE
+                    DO</a>
                 <a href="KhushPatelCV.pdf" download=""
-                    class="Button text-decoration-none text-black border-white bg-white mb-5">Download&nbspCV</a>
+                    class="Button text-decoration-none text-black border-white  mb-5">Download&nbspCV</a>
             </div>
             <div class="bannerImage position-absolute">
-                <img src="assets/images/about.png" alt="" class="img-fluid rounded-pill" draggable="false">
-            </div>
+                <img src="assets/images/about.png" alt="" class="img-fluid rounded-pill position-relative"
+                    draggable="false">
+                <span class="cir"></span>
+                    </div>
         </div>
     </section>
     <!-- banner end -->
     <!-- about start -->
     <section class="about bg-white" id="about">
         <div class="container">
-            <div class="typoText">ABOUT</div>
-            <p class="h1 heading pt-5 my-5">About Me</p>
+            <div class="typoText text-white">ABOUT</div>
+            <p class="h1 heading pt-5 my-5 text-white">About Me</p>
 
 
             <div class="row d-flex grid">
@@ -214,10 +212,10 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-12 my-3 ">
-                    <p class="text-white h5 px-3"><i class="fa-brands fa-css3-alt pe-3"></i>MediaQuery</p>
+                    <p class="text-white h5 px-3"><i class="fa-solid fa-file-code pe-3"></i>C</p>
                     <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 90%; background-color: #4faaeb;"></div>
+                        <div class="progress-bar" style="width: 60%; background-color: #015697;"></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-12 my-3 ">
@@ -228,12 +226,13 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-12 my-3 ">
-                    <p class="text-white h5 px-3"><i class="fa-solid fa-file-code pe-3"></i>C</p>
+                    <p class="text-white h5 px-3"><i class="fa-brands fa-css3-alt pe-3"></i>MediaQuery</p>
                     <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25"
                         aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar" style="width: 60%; background-color: #015697;"></div>
+                        <div class="progress-bar" style="width: 90%; background-color: #4faaeb;"></div>
                     </div>
                 </div>
+
                 <div class="col-md-6 col-12 my-3 ">
                     <p class="text-white h5 px-3"><i class="fa-solid fa-code-branch pe-3"></i>Git</p>
                     <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="25"
@@ -253,7 +252,7 @@
             <div class="achievements row d-flex">
                 <div class="col-12">
                     <div class="achieve-img d-flex">
-                        <img src="TechWar_2024_Participant.pdf" alt="" class="img-fluid rounded">
+                        <img src="assets/images/techwarParticipation.png" alt="" class="img-fluid rounded">
                     </div>
                     <div class="achieve-content">
                         <p class="text-white mb-5">
@@ -269,9 +268,9 @@
                             boundaries, learn continuously, and excel in the ever-evolving tech industry.🚀🏆
                         </p>
                         <a href="TechWar_2024_Participant.pdf" target="_blank"
-                            class="Button text-white text-decoration-none my-3">See Participation certificate</a>
+                            class="Button text-decoration-none my-3">See Participation certificate</a>
                         <a href="assets/images/techwarWinning.jpg" target="_blank"
-                            class="Button text-white text-decoration-none">See Winning certificate</a>
+                            class="Button text-decoration-none">See Winning certificate</a>
                     </div>
                 </div>
 
@@ -285,7 +284,7 @@
         <div class="container">
             <p class="h1 heading pt-5 my-5 text-white">Projects</p>
             <div class="project d-flex row">
-                <div class="col-md-6 col-12">
+                <div class="col-md-6 col-12 mt-5">
                     <div class="project-img">
                         <a href="CoffeeMarket/index.html" target="_blank"><img src="assets/images/pr1-coffee.png"
                                 class="img-fluid rounded" alt=""></a>
@@ -298,10 +297,10 @@
                             and a user-friendly interface. Customers can explore menu options, place orders, and learn
                             about the coffee-making process. Designed for elegance and efficiency, Coffee King ensures a
                             delightful online experience.</p>
-                            <a href="CoffeeMarket/index.html" class="Button text-white text-decoration-none">Visit Site</a>
+                        <a href="CoffeeMarket/index.html" class="Button text-decoration-none">Visit Site</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-12">
+                <div class="col-md-6 col-12 mt-5">
                     <div class="project-img">
                         <a href="Dekoro/index.html" target="_blank"><img src="assets/images/p2-Dekoro.png" alt=""
                                 class="img-fluid rounded"></a>
@@ -315,14 +314,14 @@
                             sophisticated style, while ensuring optimal performance across all devices. This project
                             demonstrates my ability to create visually appealing and functionally robust web solutions
                             that enhance online shopping experiences. </p>
-                            <a href="Dekoro/index.html" class="Button text-white text-decoration-none">Visit Site</a>
+                        <a href="Dekoro/index.html" class="Button text-decoration-none">Visit Site</a>
                     </div>
                 </div>
             </div>
     </section>
     <!-- project end -->
-     <!-- blog start -->
-      <section id="blog">
+    <!-- blog start -->
+    <section id="blog">
         <div class="container">
             <p class="h1 heading pt-5 my-5 text-white">Blog</p>
             <div class="row d-flex">
@@ -339,7 +338,8 @@
                         <img src="assets/images/blog2.png" alt="" class="img-fluid rounded">
                     </div>
                     <div class="blog-content">
-                        <p class="h2 text-white py-3">Latest FullStack Development Trends You need to Follow For Business Seccess</p>
+                        <p class="h2 text-white py-3">Latest FullStack Development Trends You need to Follow For
+                            Business Seccess</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
@@ -347,19 +347,20 @@
                         <img src="assets/images/blog3.png" alt="" class="img-fluid rounded">
                     </div>
                     <div class="blog-content">
-                        <p class="h2 text-white py-3">FullStack vs Specialized Developer Which one to Choose in 2025?</p>
+                        <p class="h2 text-white py-3">FullStack vs Specialized Developer Which one to Choose in 2025?
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-      </section>
-     <!-- blog end -->
+    </section>
+    <!-- blog end -->
     <!-- contact start -->
     <section id="contact">
         <div class="container">
             <p class="h1 heading pt-5 my-5 text-white">Contact</p>
 
-            <div class="d-flex row">
+            <div class="d-flex row mb-5">
                 <div class="col-12 col-md-6">
                     <form class="row g-3 text-black my-5">
                         <div class="col-md-6 col-12">
