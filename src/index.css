@@ -1,5 +1,9 @@
 @import "tailwindcss";
+ *::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+ }
 
-*{
+.jet{
     font-family: 'Jetbrains Mono', monospace;
 }
