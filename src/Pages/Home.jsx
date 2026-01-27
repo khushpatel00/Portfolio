@@ -10,7 +10,7 @@ import Contact from '../Components/Contact'
 
 function Home() {
     return (
-        <div>
+        <>
             <Menu />
             <Landing />
              <About />
@@ -19,7 +19,7 @@ function Home() {
             <Skills />
             <Education />
             <Contact /> */}
-        </div>
+        </>
     )
 }
 
