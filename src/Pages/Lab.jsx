@@ -4,25 +4,25 @@ import Menu from '../Components/Menu'
 
 const items = [
   {
-    image: 'https://picsum.photos/300/300?grayscale',
+    image: '/images/Ochi.png',
     link: 'https://google.com/',
     title: 'Ochi',
     description: ' FramerMotion'
   },
   {
-    image: 'https://picsum.photos/400/400?grayscale',
+    image: '/images/DBSeeder.png',
     link: 'https://google.com/',
     title: 'DBSeeder',
     description: 'we made this in a hackathon, btw'
   },
   {
-    image: 'https://picsum.photos/500/500?grayscale',
+    image: '/images/session0.png',
     link: 'https://google.com/',
     title: 'session0',
     description: 'i didnt completed the whole project 🙂'
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
+    image: '/images/FakeStore.png',
     link: 'https://google.com/',
     title: 'FakeStore',
     description: 'i just implemented the use of This API (not a project btw)'
@@ -34,37 +34,37 @@ const items = [
     description: "i'm a gamedev too, btw"
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
+    image: '/images/WeatherNow.png',
     link: 'https://google.com/',
     title: 'WeatherNow',
     description: "a mini-project made with WeatherAPI"
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
+    image: '/images/FINDr.png',
     link: 'https://google.com/',
     title: 'FINDr',
     description: "a mini-project movie-finder project (i didnt finished this too)"
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
+    image: '/images/CoffeeMarket.png',
     link: 'https://google.com/',
     title: 'CoffeeMarket',
     description: "a CoffeeMarket UI (no-js)"
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
+    image: '/images/Dekoro.png',
     link: 'https://google.com/',
     title: 'Dekoro',
     description: "a Furniture-page UI (no-js)"
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
+    image: '/images/A2Z.png',
     link: 'https://google.com/',
     title: 'A2Z Furnishing',
     description: "Live-project (no-js)"
   },
   {
-    image: 'https://picsum.photos/600/600?grayscale',
+    image: '/images/Nestify.png',
     link: 'https://google.com/',
     title: 'Nestify',
     description: "a Ecommerce-page UI (no-js)"

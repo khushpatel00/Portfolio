@@ -712,6 +712,7 @@ class InfiniteGridMenu {
             img.crossOrigin = 'anonymous';
             img.onload = () => resolve(img);
             img.src = item.image;
+            img.classList.add = 'block max-w-full max-h-full w-auto h-auto object-contain'
           })
       )
     ).then(images => {
