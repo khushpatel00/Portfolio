@@ -1,5 +1,6 @@
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react'
+import computeResult from '../Logic/computeResult';
 
 export default function Terminal() {
 
@@ -9,7 +10,7 @@ export default function Terminal() {
 	const cursorRef = new useRef(null)
 	useEffect(() => {
 		document.addEventListener('keydown', (e) => {
-			cursorRef.current.classList = 'bg-zinc-200 w-4 h-8 cursor'
+			// cursorRef.current.classList = 'bg-zinc-200 w-4 h-8 cursor'
 			if (e.key == 'Enter') {
 				handleCommandInput(inputRef.current.innerHTML);
 				return;
@@ -50,18 +51,20 @@ export default function Terminal() {
 
 	const handleCommandInput = (command) => {
 		console.log('input command: ', command);
-
-		let result = ''
+		// let result = ''
 		// console.log(history)
 		// setHistory([
 		// 	...history,
 		// 	{ 'command': command, 'result': result }
 		// ]) // failed, saves only 1 last input
 
-		setHistory(prev => [
-			...prev,
-			{ command, result }
-		]);
+		let result = computeResult(command, setHistory);
+		if(result != 'clear'){
+			setHistory(prev => [
+				...prev,
+				{ command, result }
+			]);
+		}
 		
 		inputRef.current.innerHTML = ''
 	}
@@ -92,7 +95,7 @@ export default function Terminal() {
 
 			<div id='current' className='relative  flex items-center'>
 				user@cli-portfolio ~ $&nbsp;
-				<div id='termInput' ref={inputRef}>
+				<div id='termInput' style={{whiteSpace: 'pre-wrap'}} ref={inputRef}>
 
 				</div>
 				<span ref={cursorRef} className='bg-zinc-200 w-4 h-8 cursor'></span>
