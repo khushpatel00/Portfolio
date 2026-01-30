@@ -40,7 +40,7 @@ function Menu() {
 
     let isClosed = true;
     const handleClick = () => {
-        console.log('clicked', stairRef.current);
+        // console.log('clicked', stairRef.current);
         if(isClosed){
             tl.set('.stairsParent',{ display: 'flex' })
             tl.from(stairRef.current, {
@@ -87,10 +87,10 @@ function Menu() {
         }
     };
     useEffect(()=>{
-        if(window.location.href.split('/').pop() == 'lab'){
+        // if(window.location.href.split('/').pop() == 'lab'){
             isClosed = false;
             handleClick();
-        }
+        // }
     })
     return (
         <>
@@ -104,7 +104,7 @@ function Menu() {
                         <div key={index} ref={(el) => (stairRef.current[index] = el)} className="stair w-1/5 h-full bg-black"></div>
                     ))}
                     <div className='flex flex-col z-20 content absolute top-1/2 left-1/2 -translate-1/2'>
-                        <Link className='text-4xl text-bold poppins'>Home</Link>
+                        <Link to='/Portfolio' className='text-4xl text-bold poppins'>Home</Link>
                         <Link to='/lab' className='text-4xl text-bold poppins'>Lab</Link>
                     </div>
                 </div>
