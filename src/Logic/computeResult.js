@@ -1,5 +1,8 @@
+// import switchPage from '../Logic/PageSwitch'
+// import { handleClick } from "../Components/Menu";
 let currentDirectory = '/home/user'
 let auth = 'user'
+
 export default function computeResult(command, setHistory){
 	command = command.split(' ');
 	// console.log('getting results for ', command);
@@ -13,6 +16,11 @@ export default function computeResult(command, setHistory){
 	case 'clear':
 		setHistory([]);
 		return 'clear'; 
+		break;
+	case 'portfolio': 
+	// handleClick()
+	// switchPage(isClosed, iconRef, stairRef, tl)
+		return 'switching pages';
 		break;
 	}
 

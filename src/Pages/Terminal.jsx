@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react'
 import computeResult from '../Logic/computeResult';
+import Menu from '../Components/Menu';
 
 export default function Terminal() {
 
@@ -59,47 +60,50 @@ export default function Terminal() {
 		// ]) // failed, saves only 1 last input
 
 		let result = computeResult(command, setHistory);
-		if(result != 'clear'){
+		if (result != 'clear') {
 			setHistory(prev => [
 				...prev,
 				{ command, result }
 			]);
 		}
-		
+
 		inputRef.current.innerHTML = ''
 	}
 
 	return (
-		<div id='terminalWindow' className='text-2xl'>
-			<div className='mb-10 flex flex-col'>
-				<span className='text-3xl tracking-tight'>khushpatel - cli portfolio</span>
+		<>
+			<Menu />
+			<div id='terminalWindow' className='text-2xl'>
+				<div className='mb-10 flex flex-col'>
+					<span className='text-3xl tracking-tight'>khushpatel - cli portfolio</span>
 
-				<span>
-					To print available commands, type 'help' and press Enter
-				</span>
-			</div>
+					<span>
+						To print available commands, type 'help' and press Enter
+					</span>
+				</div>
 
-			{history.map((item, index) => (
-				<div key={index} className='historyItems'>
-					<div className='flex items-center'>
-						user@cli-portfolio ~ $&nbsp;
-						<div className='historyInput'>
-							{item.command}
+				{history.map((item, index) => (
+					<div key={index} className='historyItems'>
+						<div className='flex items-center'>
+							user@cli-portfolio ~ $&nbsp;
+							<div className='historyInput'>
+								{item.command}
+							</div>
+						</div>
+						<div>
+							{item.result}
 						</div>
 					</div>
-					<div>
-						{item.result}
+				))}
+
+				<div id='current' className='relative  flex items-center'>
+					user@cli-portfolio ~ $&nbsp;
+					<div id='termInput' style={{ whiteSpace: 'pre-wrap' }} ref={inputRef}>
+
 					</div>
+					<span ref={cursorRef} className='bg-zinc-200 w-4 h-8 cursor'></span>
 				</div>
-			))}
-
-			<div id='current' className='relative  flex items-center'>
-				user@cli-portfolio ~ $&nbsp;
-				<div id='termInput' style={{whiteSpace: 'pre-wrap'}} ref={inputRef}>
-
-				</div>
-				<span ref={cursorRef} className='bg-zinc-200 w-4 h-8 cursor'></span>
 			</div>
-		</div>
+		</>
 	)
 }
