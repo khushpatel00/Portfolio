@@ -8,17 +8,31 @@ function Menu({noButton = false}) {
     const iconRef = useRef(null);
     const contentRef = useRef(null);
     const tl = gsap.timeline();
+    
 
-    let isClosed = true;
+
+
+
+    // let isClosed = true;
+    const isClosedRef = useRef(true);
     useEffect(() => {
-        // if(window.location.href.split('/').pop() == 'lab'){
-        isClosed = switchPage(false, iconRef, stairRef, tl);
-        // isClosed = false;
-        // }
+        isClosedRef.current = switchPage(false, iconRef, stairRef, tl);
+
+        // Listen for cli commands from the terminal (see computeResult)
+        const onPortfolio = () => {
+            handleClick();
+        };
+        window.addEventListener('cli:portfolio', onPortfolio);
+        return () => window.removeEventListener('cli:portfolio', onPortfolio);
+
     }, []);
     const handleClick = () => {
-        isClosed = switchPage(isClosed, iconRef, stairRef, tl);
+        isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, tl);
     }
+
+
+
+
     return (
         <>
             <div className='fixed duration-300 z-20 flex flex-col items-center justify-center top-0 right-0 bg-black w-1/8 h-10 px-20 cursor-pointer' id="menuButton" ref={iconRef} onClick={handleClick} style={{display: noButton == true && 'none'}}>

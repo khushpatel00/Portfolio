@@ -17,9 +17,12 @@ export default function computeResult(command, setHistory){
 		setHistory([]);
 		return 'clear'; 
 		break;
-	case 'portfolio': 
-	// handleClick()
-	// switchPage(isClosed, iconRef, stairRef, tl)
+	case 'portfolio':
+
+		// Dispatch an event that the Menu component listens for to trigger the menu click
+		if (typeof window !== 'undefined' && window.dispatchEvent) {
+			window.dispatchEvent(new CustomEvent('cli:portfolio'));
+		}
 		return 'switching pages';
 		break;
 	}
