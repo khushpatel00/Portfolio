@@ -25,6 +25,7 @@ function Menu({noButton = false}) {
         window.addEventListener('cli:portfolio', onPortfolio);
         return () => window.removeEventListener('cli:portfolio', onPortfolio);
 
+
     }, []);
     const handleClick = () => {
         isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, tl);
@@ -35,7 +36,7 @@ function Menu({noButton = false}) {
 
     return (
         <>
-            <div className='fixed duration-300 z-20 flex flex-col items-center justify-center top-0 right-0 bg-black w-1/8 h-10 px-20 cursor-pointer' id="menuButton" ref={iconRef} onClick={handleClick} style={{display: noButton == true && 'none'}}>
+            <div className='fixed duration-300 z-20 flex flex-col items-center justify-center top-0 right-0 bg-black w-1/8 h-10 px-20 cursor-pointer' id="menuButton" ref={iconRef} onClick={handleClick} style={{display: noButton == true && 'none'}}> 
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
             </div>

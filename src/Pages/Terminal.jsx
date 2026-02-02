@@ -2,10 +2,10 @@ import gsap from 'gsap';
 import { useEffect, useRef, useState } from 'react'
 import computeResult from '../Logic/computeResult';
 import Menu from '../Components/Menu';
-
+import DOMPurify from 'dompurify'
 export default function Terminal() {
-
 	const [history, setHistory] = useState([]);
+	
 
 	const inputRef = new useRef(null)
 	const cursorRef = new useRef(null)
@@ -72,6 +72,7 @@ export default function Terminal() {
 
 	return (
 		<>
+			{/* hides the menu click button on top */}
 			<Menu noButton={true} />
 			<div id='terminalWindow' className='text-2xl'>
 				<div className='mb-10 flex flex-col'>
@@ -90,17 +91,19 @@ export default function Terminal() {
 								{item.command}
 							</div>
 						</div>
-						<div>
-							{item.result}
-						</div>
+						<div style={{ whiteSpace: 'pre-wrap' }} 
+							dangerouslySetInnerHTML={{
+								__html: DOMPurify.sanitize(item.result),
+						}}
+						/>
 					</div>
 				))}
 
 				<div id='current' className='relative  flex items-center'>
 					user@cli-portfolio ~ $&nbsp;
-					<div id='termInput' style={{ whiteSpace: 'pre-wrap' }} ref={inputRef}>
+					<p id='termInput' style={{ whiteSpace: 'pre-wrap' }} ref={inputRef}>
 
-					</div>
+					</p>
 					<span ref={cursorRef} className='bg-zinc-200 w-4 h-8 cursor'></span>
 				</div>
 			</div>

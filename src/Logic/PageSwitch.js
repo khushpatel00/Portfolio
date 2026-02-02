@@ -1,13 +1,7 @@
 import { gsap } from 'gsap';
-function switchPage(isClosed, iconRef, stairRef, tl, showData = true, contentRef = null) {
+function switchPage(isClosed, iconRef, stairRef, tl) {
     // console.log('clicked', stairRef.current); 
     // console.log('is closed: ', isClosed)
-    if (showData == false) {
-        // console.log('hiding links')
-        gsap.set(contentRef.current, { display: 'none' })
-    } else {
-        gsap.set('.content', { display: 'flex' })
-    }
     if (isClosed) { // opening menu
         tl.set('.stairsParent', { display: 'flex' })
         tl.from(stairRef.current, {
