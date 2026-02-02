@@ -5,6 +5,7 @@ import switchPage from '../Logic/PageSwitch'
 
 function Menu({noButton = false}) {
     const stairRef = useRef([]);
+    const stairRefWhite = useRef([]);
     const iconRef = useRef(null);
     const contentRef = useRef(null);
     const tl = gsap.timeline();
@@ -16,7 +17,7 @@ function Menu({noButton = false}) {
     // let isClosed = true;
     const isClosedRef = useRef(true);
     useEffect(() => {
-        isClosedRef.current = switchPage(false, iconRef, stairRef, tl);
+        isClosedRef.current = switchPage(false, iconRef, stairRef, stairRefWhite, tl);
 
         // Listen for cli commands from the terminal (see computeResult)
         const onPortfolio = () => {
@@ -28,7 +29,7 @@ function Menu({noButton = false}) {
 
     }, []);
     const handleClick = () => {
-        isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, tl);
+        isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, stairRefWhite, tl);
     }
 
 
@@ -41,9 +42,12 @@ function Menu({noButton = false}) {
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
             </div>
             <div className='absolute top-0 left-0 z-15'>
-                <div className="stairsParent relative h-screen w-screen hidden bg-transparent">
+                <div className="stairsParent relative h-screen w-screen flex bg-transparent">
                     {[1, 2, 3, 4, 5].map((val, index) => (
-                        <div key={index} ref={(el) => (stairRef.current[index] = el)} className="stair w-1/5 h-full bg-black"></div>
+                        <div key={index} className='w-1/5 relative h-full'>
+                            <div ref={(el) => (stairRefWhite.current[index] = el)} className="absolute top-0 left-0 stair w-full h-full bg-white"></div>
+                            <div ref={(el) => (stairRef.current[index] = el)} className="absolute top-0 left-0 stair w-full h-full bg-black"></div>
+                        </div>
                     ))}
                     <div className='flex flex-col z-20 content absolute top-1/2 left-1/2 -translate-1/2' ref={contentRef}>
                         <Link to='/Portfolio' className='text-4xl text-bold poppins'>Home</Link>

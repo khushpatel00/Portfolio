@@ -73,7 +73,7 @@ export default function Terminal() {
 	return (
 		<>
 			{/* hides the menu click button on top */}
-			<Menu noButton={true} />
+			<Menu />
 			<div id='terminalWindow' className='text-2xl'>
 				<div className='mb-10 flex flex-col'>
 					<span className='text-3xl tracking-tight'>khushpatel - cli portfolio</span>

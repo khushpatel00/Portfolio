@@ -5,7 +5,7 @@ let auth = 'user'
 
 let help = `
 This Terminal is the actuall Portfolio of khushpatel00,
-for a better viewing experience, you can also visit my UI-Portfolio with command <span class='p-1 px-2 rounded-lg bg-zinc-800'>portfolio</span>
+for a better viewing experience, you can also visit my UI-Portfolio with command <span class='p-1 px-2 rounded-lg bg-zinc-800'>portfolio</span>, and then click Home
 
 Supported Commands: cd, ls, pwd, clear, portfolio, help
 
