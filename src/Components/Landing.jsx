@@ -9,10 +9,10 @@ export default function Landing() {
   const revealImgRef = useRef(null);
 
   return (
-    <div 
-      style={{ 
-        height: '100vh', 
-        position: 'relative', 
+    <div
+      style={{
+        height: '100vh',
+        position: 'relative',
         overflow: 'hidden',
         backgroundColor: '#060010'
       }}
@@ -38,8 +38,20 @@ export default function Landing() {
         horizontalBeamOffset={0.1}
         verticalBeamOffset={0.0}
         color="#CF9EFF"
+        horizontalSizing={0.5}
+        verticalSizing={3}
+        wispDensity={1}
+        wispSpeed={30}
+        wispIntensity={5}
+        flowSpeed={0.65}
+        flowStrength={0.25}
+        fogIntensity={0.45}
+        fogScale={0.1}
+        fogFallSpeed={0.6}
+        decay={1.1}
+        falloffStart={1.2}
       />
-      
+
       <div style={{
         position: 'absolute',
         top: '50%',
@@ -79,19 +91,8 @@ export default function Landing() {
           WebkitMaskRepeat: 'no-repeat',
           maskRepeat: 'no-repeat'
         }}
-  horizontalSizing={0.5}
-  verticalSizing={3}
-  wispDensity={1}
-  wispSpeed={30}
-  wispIntensity={5}
-  flowSpeed={0.65}
-  flowStrength={0.25}
-  fogIntensity={0.45}
-  fogScale={0.1}
-  fogFallSpeed={0.6}
-  decay={1.1}
-  falloffStart={1.2}
-/>
+
+      />
     </div>
   );
 }

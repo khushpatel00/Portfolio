@@ -72,7 +72,7 @@ export default function Terminal() {
 
 	return (
 		<>
-			<Menu />
+			<Menu noButton={true} />
 			<div id='terminalWindow' className='text-2xl'>
 				<div className='mb-10 flex flex-col'>
 					<span className='text-3xl tracking-tight'>khushpatel - cli portfolio</span>

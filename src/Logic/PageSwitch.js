@@ -1,9 +1,9 @@
 import { gsap } from 'gsap';
 function switchPage(isClosed, iconRef, stairRef, tl, showData = true, contentRef = null) {
     // console.log('clicked', stairRef.current); 
-    console.log('is closed: ', isClosed)
+    // console.log('is closed: ', isClosed)
     if (showData == false) {
-        console.log('hiding links')
+        // console.log('hiding links')
         gsap.set(contentRef.current, { display: 'none' })
     } else {
         gsap.set('.content', { display: 'flex' })
@@ -46,11 +46,16 @@ function switchPage(isClosed, iconRef, stairRef, tl, showData = true, contentRef
         })
         isClosed = true
         tl.set('.stairsParent', { display: 'none' });
+        tl.fromTo(iconRef.current, {
+             opacity: 0
+        },{
+            opacity: 1
+        })
         gsap.to('.content', {
             y: 20,
             opacity: 0,
         })
-        console.log('after animation isclosed: ', isClosed)
+        // console.log('after animation isclosed: ', isClosed)
     }
     return isClosed;
 };

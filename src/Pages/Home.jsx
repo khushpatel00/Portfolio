@@ -13,7 +13,7 @@ function Home() {
         <>
             <Menu />
             <Landing />
-             <About />
+            <About />
             {/* <Projects />
             <Achievements />
             <Skills />
