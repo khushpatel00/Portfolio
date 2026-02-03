@@ -8,7 +8,7 @@ function Menu({noButton = false}) {
     const stairRefWhite = useRef([]);
     const iconRef = useRef(null);
     const contentRef = useRef(null);
-    const tl = gsap.timeline();
+    // const tl = gsap.timeline();
     
 
 
@@ -17,7 +17,7 @@ function Menu({noButton = false}) {
     // let isClosed = true;
     const isClosedRef = useRef(true);
     useEffect(() => {
-        isClosedRef.current = switchPage(false, iconRef, stairRef, stairRefWhite, tl);
+        isClosedRef.current = switchPage(false, iconRef, stairRef, stairRefWhite);
 
         // Listen for cli commands from the terminal (see computeResult)
         const onPortfolio = () => {
@@ -29,7 +29,7 @@ function Menu({noButton = false}) {
 
     }, []);
     const handleClick = () => {
-        isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, stairRefWhite, tl);
+        isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, stairRefWhite);
     }
 
 

@@ -1,7 +1,8 @@
-// import { gsap } from 'gsap';
-function switchPage(isClosed, iconRef, stairRef, stairRefWhite, tl) {
+import { gsap } from 'gsap';
+function switchPage(isClosed, iconRef, stairRef, stairRefWhite) {
     // console.log('clicked', stairRef.current); 
     // console.log('is closed: ', isClosed)
+    const tl = gsap.timeline();
     let menuIsClosed = isClosed;
     if (isClosed) { // opening menu
         console.log(tl)
@@ -12,8 +13,8 @@ function switchPage(isClosed, iconRef, stairRef, stairRefWhite, tl) {
         }, {
             stagger: 0.1,
             duration: 1,
-            delay: 0.3,
-            ease: 'power2.out',
+            // delay: 0.3,
+            ease: 'power2.inOut',
             y: 0
         }, 'sync')
 
@@ -51,15 +52,16 @@ function switchPage(isClosed, iconRef, stairRef, stairRefWhite, tl) {
         }, 'run-together')
         tl.to(stairRefWhite.current, {
             y: '100%',
-            stagger: 0.1,
+            stagger: 0.12,
             duration: 1,
-            // delay: 0.25,
-            ease: 'power1.in'
+            delay: 0.15,
+            ease: 'power2.out'
         }, 'run-together')
         tl.to('.content', {
             y: 20,
             opacity: 0,
-            delay: 0.2,
+            delay: 0.35,
+            duration: 0.1,
         }, 'run-together')
         // iconRef.current.src='close.svg';
         iconRef.current.children[0].className = 'duration-300 w-8 h-px my-1 bg-white'
