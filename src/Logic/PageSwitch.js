@@ -42,7 +42,8 @@ function switchPage(isClosed, iconRef, stairRef, stairRefWhite) {
         console.log('timeline ended')
     } else { // closing menu
         tl.set('.stairsParent', { display: 'flex' })
-        
+        // document.querySelector("body").style.overflow = 'hidden'
+        tl.set('body', {overflow: 'hidden'}) // stop scroll
         tl.to(stairRef.current, {
             y: '100%',
             stagger: 0.1,
@@ -72,6 +73,7 @@ function switchPage(isClosed, iconRef, stairRef, stairRefWhite) {
             duration: 0,
             // opacity: 1,
         })
+        tl.set('body', {overflow: 'auto'}) // start scroll
         tl.to(stairRefWhite.current, {
             y: '0',
             duration: 0,

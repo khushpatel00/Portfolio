@@ -14,9 +14,9 @@ function Home() {
             <Menu />
             <Landing />
             <About />
+            <Skills />
             {/* <Projects />
             <Achievements />
-            <Skills />
             <Education />
             <Contact /> */}
         </>
