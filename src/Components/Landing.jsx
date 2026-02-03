@@ -68,8 +68,9 @@ export default function Landing() {
         color: 'white',
         fontSize: '2rem',
         zIndex: 6
-      }}>
-        {/* Your content here */}
+      }} className='flex flex-col text-center'>
+        <p className='leading-7'>Frontend Engineer building motion-first interfaces & interactive systems.</p>
+        <p className='text-sm tracking-tight'>Web · Animation · Game Dev Crossover</p>
       </div>
 
       <img
