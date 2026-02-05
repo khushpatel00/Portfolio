@@ -1,4 +1,14 @@
 class Controller {
+    static currentDirectory = '/home/user'
+    static auth = 'user'
+
+    static help = `
+This Terminal is the actuall Portfolio of khushpatel00,
+for a better viewing experience, you can also visit my UI-Portfolio with command <span class='p-1 px-2 rounded-lg bg-zinc-800'>portfolio</span>, and then click Home
+
+Supported Commands: cd, ls, pwd, clear, portfolio, help
+
+`
     static locateObject = {
         '/': {
             'home': {
@@ -12,7 +22,7 @@ class Controller {
                     'EmptyFile.txt': '',
                 },
                 'admin': {
-    
+
                 }
             },
             'var': {},
@@ -21,14 +31,20 @@ class Controller {
             'root': {},
         }
     }
+    static locateFile(path) {
+        // console.log(`finding for ${path}`)
+        let currentPath = this.pwd([]);
+        console.log(`jumping ${currentPath} to ${path}`)
+        return null;
+    }
     static changeDirectory(command) {
-        if (command[1]) console.log('got ', command);
-        else return `cd: expected 1 arguments; got ${command.length - 1}`
+        if (command.length > 2 || command.length <= 1) return `cd: expected 1 arguements; got ${command.length - 1}`
+        let result = this.locateFile(command[1])
     }
 
     static pwd(command) {
         if (command[1]) return `pwd: expected 0 arguments; got ${command.length - 1}`
-        return currentDirectory;
+        return this.currentDirectory;
     }
 
     static readFile(command) {
