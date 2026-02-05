@@ -38,6 +38,9 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
 
         // distributing path
         path = path.split('/')
+        // path.forEach((com, index) => {
+
+        // })
         if(path[0] == '' /* '/' - root directory */) currentPath = '/'
         else if(path[0] == '.' /* './' - current directory */) currentPath = currentPath
         else if(path[0] == '..' /* '../' - prev directory */) currentPath = currentPath.split('/').slice(0, -1).join('/');
@@ -45,12 +48,15 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
             // for testing only
             // this doesnt check if the path is there or not, will be fixed
             currentPath = `${currentPath}/${path}`;
+            let currentPathObject = this.currentDirectory.split('/');
+            console.log(currentPathObject);
+            // Object.keys()
         }
         this.currentDirectory = currentPath
-        console.log(this.currentDirectory);
+        // console.log(this.currentDirectory);
+        
 
-
-        console.log(path)
+        // console.log(path)
 
 
         return null;

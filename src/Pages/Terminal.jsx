@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from 'react'
 import computeResult from '../Logic/computeResult';
 import Menu from '../Components/Menu';
 import DOMPurify from 'dompurify'
+import Controller from '../Logic/fileStructure.controller'
 export default function Terminal() {
 	const [history, setHistory] = useState([]);
-	
+
 
 	const inputRef = new useRef(null)
 	const cursorRef = new useRef(null)
@@ -58,22 +59,21 @@ export default function Terminal() {
 		// 	...history,
 		// 	{ 'command': command, 'result': result }
 		// ]) // failed, saves only 1 last input
-
+		let path = Controller.currentDirectory == '/home/user' ? '~' : Controller.currentDirectory.split('/').pop()
 		let result = computeResult(command, setHistory);
 		if (result != 'clear') {
 			setHistory(prev => [
 				...prev,
-				{ command, result }
+				{ command, result, path }
 			]);
 		}
 
 		inputRef.current.innerHTML = ''
 	}
-
 	return (
 		<>
 			{/* hides the menu click button on top */}
-			<Menu noButton={true}/>
+			<Menu noButton={true} />
 			<div id='terminalWindow' className='text-2xl'>
 				<div className='mb-10 flex flex-col'>
 					<span className='text-3xl tracking-tight'>khushpatel - cli portfolio</span>
@@ -86,21 +86,21 @@ export default function Terminal() {
 				{history.map((item, index) => (
 					<div key={index} className='historyItems'>
 						<div className='flex items-center'>
-							user@cli-portfolio ~ $&nbsp;
+							user@cli-portfolio {item.path} $&nbsp;
 							<div className='historyInput'>
 								{item.command}
 							</div>
 						</div>
-						<div style={{ whiteSpace: 'pre-wrap' }} 
+						<div style={{ whiteSpace: 'pre-wrap' }}
 							dangerouslySetInnerHTML={{
 								__html: DOMPurify.sanitize(item.result),
-						}}
+							}}
 						/>
 					</div>
 				))}
 
 				<div id='current' className='relative  flex items-center'>
-					user@cli-portfolio ~ $&nbsp;
+					user@cli-portfolio {Controller.currentDirectory == '/home/user' ? '~' : Controller.currentDirectory.split('/').pop()} $&nbsp;
 					<p id='termInput' style={{ whiteSpace: 'pre-wrap' }} ref={inputRef}>
 
 					</p>

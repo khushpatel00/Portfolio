@@ -25,8 +25,6 @@ function Menu({noButton = false}) {
         };
         window.addEventListener('cli:portfolio', onPortfolio);
         return () => window.removeEventListener('cli:portfolio', onPortfolio);
-
-
     }, []);
     const handleClick = () => {
         isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, stairRefWhite);
