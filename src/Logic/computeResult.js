@@ -1,5 +1,6 @@
 // import switchPage from '../Logic/PageSwitch'
 // import { handleClick } from "../Components/Menu";
+import Controller from './fileStructure.controller'
 let currentDirectory = '/home/user'
 let auth = 'user'
 
@@ -11,19 +12,24 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
 
 `
 
+// if typeof value = object, value represents directory
+// elseif value = string, value represents file 
+
+
+
 export default function computeResult(command, setHistory, navigate) {
-	
+
 	command = command.split(' ');
 	// console.log('getting results for ', command);
 	switch (command[0]) { // check for the root command
-		case 'help': 
+		case 'help':
 			return help;
 			break;
 		case 'pwd':
-			return pwd();
+			return Controller.pwd(command);
 			break;
 		case 'cd':
-			return changeDirectory();
+			return Controller.changeDirectory(command);
 			break;
 		case 'clear':
 			setHistory([]);
@@ -36,17 +42,12 @@ export default function computeResult(command, setHistory, navigate) {
 			}
 			return 'switching pages';
 			break;
+		case 'cat':
+			return Controller.readFile(command);
+			break;
 	}
 
 
 
-	function changeDirectory() {
-		if (command[1]) console.log('got ', command);
-		else return `cd: expected 1 arguments; got ${command.length - 1}`
-	}
-	function pwd() {
-		if (command[1]) return `pwd: expected 0 arguments; got ${command.length - 1}`
-		return currentDirectory;
-	}
 
 }
