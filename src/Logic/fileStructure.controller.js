@@ -1,5 +1,5 @@
 class Controller {
-    static currentDirectory = '/home/user'
+    static currentDirectory = '/home/user/Documents'
     static auth = 'user'
 
     static help = `
@@ -34,7 +34,25 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
     static locateFile(path) {
         // console.log(`finding for ${path}`)
         let currentPath = this.pwd([]);
-        console.log(`jumping ${currentPath} to ${path}`)
+        console.log(`jumping ${currentPath} to ${path}`);
+
+        // distributing path
+        path = path.split('/')
+        if(path[0] == '' /* '/' - root directory */) currentPath = '/'
+        else if(path[0] == '.' /* './' - current directory */) currentPath = currentPath
+        else if(path[0] == '..' /* '../' - prev directory */) currentPath = currentPath.split('/').slice(0, -1).join('/');
+        else /* direct current directory */ {
+            // for testing only
+            // this doesnt check if the path is there or not, will be fixed
+            currentPath = `${currentPath}/${path}`;
+        }
+        this.currentDirectory = currentPath
+        console.log(this.currentDirectory);
+
+
+        console.log(path)
+
+
         return null;
     }
     static changeDirectory(command) {
