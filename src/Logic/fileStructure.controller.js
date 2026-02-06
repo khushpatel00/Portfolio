@@ -14,14 +14,14 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
             'home': {
                 'user': {
                     'Documents': {
-                        'aboutme.txt': '',
+                        'aboutme.txt': 'about me',
                         'Projects': {
-                            'projects.txt': '',
+                            'projects.txt': 'projects',
                         },
-                        'contact.txt': '',
+                        'contact.txt': 'on github',
                     },
                     'Downloads': {},
-                    'EmptyFile.txt': '',
+                    'emptyFile.txt': 'nothn',
                 },
                 'admin': {
 
@@ -76,9 +76,6 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                 // console.log(this.locateObject[com]);
 
                 console.log('current Object: ', this.CurrentObject)
-
-
-
             }
             // currentPath = `${currentPath}/${path}`;
             // let currentPathObject = this.currentDirectory.split('/');
@@ -88,6 +85,47 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
         })
 
         return result;
+    }
+    static readFile(command) {
+        let fileContent = '', tempDirectory = this.currentDirectory, tempObject = { ...this.CurrentObject }, result = '';
+        if (command[1].split('/').length <= 1) {
+            fileContent = this.CurrentObject[command[1]]
+        } else {
+            let currentPath = this.pwd([]);
+            command[1].split('/').forEach((com) => {
+                if (com == '' /* '/' - root directory */) {
+                    tempObject = { ...this.locateObject['/'] }
+                    tempDirectory = '/'
+                    // this.currentDirectory = '/'
+                    // console.log(this.CurrentObject)
+                }
+                else if (com == '.' /* './' - current directory */) tempDirectory = currentPath
+                else if (com == '..' /* '../' - prev directory */) {
+                    currentPath = currentPath.split('/').slice(0, -1).join('/');
+                    console.log(currentPath)
+                    tempDirectory = currentPath == '' ? '/' : currentPath;
+                }
+                if (com != '' && com != '.' && com != '..') {
+                    if (tempObject[com] != undefined) {
+                        if (typeof tempObject[com] != 'object') {
+                            fileContent = `cat: "${com}" is a directory, not a file`;
+                        } else {
+                            tempObject = tempObject[com];
+                            tempDirectory = `${tempDirectory == '/' ? '' : tempDirectory}/${com}`;
+                        }
+                        console.log(tempDirectory);
+                    } else fileContent = `cat: file "${command[0]}" does not exist`
+                    console.log('current Object: ', tempObject)
+                    fileContent = tempObject[command[1].split('/').pop()]
+                    console.log(fileContent, tempObject, command[1], command[1].split('/'));
+                }
+            })
+            
+        }
+        fileContent == `cat: cant find ${command[1].split('/')}`
+        console.log(fileContent);
+ 
+        return fileContent
     }
     static changeDirectory(command) {
         if (command.length > 2 || command.length <= 1) return `cd: expected 1 arguements; got ${command.length - 1}`
@@ -100,8 +138,9 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
         return this.currentDirectory;
     }
 
-    static readFile(command) {
-        if (command.length > 1 || command.length < 0) return `cat: expected 1 arguements; got ${command.length - 1}`
+    static cat(command) {
+        if (command.length > 2 || command.length < 0) return `cat: expected 1 arguements; got ${command.length - 1}`
+        return this.readFile(command)
     }
     static ls() {
         let temp = '';

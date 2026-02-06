@@ -37,7 +37,7 @@ export default function computeResult(command, setHistory, navigate) {
 			return 'switching pages';
 			break;
 		case 'cat':
-			return Controller.readFile(command);
+			return Controller.cat(command);
 			break;
 		default: 
 			return `Unknown Command: ${command[0]}`
