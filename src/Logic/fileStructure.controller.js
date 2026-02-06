@@ -64,8 +64,13 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                 // this doesnt check if the path is there or not, will be fixed
 
                 if (this.CurrentObject[com] != undefined) {
-                    this.CurrentObject = this.CurrentObject[com];
-                    this.currentDirectory = `${this.currentDirectory == '/' ? '' : this.currentDirectory}/${com}`;
+                    if (typeof this.CurrentObject[com] == 'string') {
+                        result = `cd: "${com}" is a file, not a directory`;
+                        return;
+                    } else {
+                        this.CurrentObject = this.CurrentObject[com];
+                        this.currentDirectory = `${this.currentDirectory == '/' ? '' : this.currentDirectory}/${com}`;
+                    }
                     console.log(this.currentDirectory);
                 } else result = `cd: the directory "${path.join('/')}" does not exist`
                 // console.log(this.locateObject[com]);
