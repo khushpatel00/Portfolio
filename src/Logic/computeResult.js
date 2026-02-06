@@ -26,6 +26,9 @@ export default function computeResult(command, setHistory, navigate) {
 			setHistory([]);
 			return 'clear';
 			break;
+		case 'ls': 
+			if(command[1]) return `ls: expected 0 arguments; got ${command.length - 1}`
+			return Controller.ls();
 		case 'portfolio':
 			// Dispatch an event that the Menu component listens for to trigger the menu click
 			if (typeof window !== 'undefined' && window.dispatchEvent) {
@@ -36,6 +39,8 @@ export default function computeResult(command, setHistory, navigate) {
 		case 'cat':
 			return Controller.readFile(command);
 			break;
+		default: 
+			return `Unknown Command: ${command[0]}`
 	}
 
 

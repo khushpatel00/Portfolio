@@ -33,6 +33,9 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
             'root': {},
         }
     }
+    static CurrentObject = { // default directory
+        ...this.locateObject['/']['home']['user']
+    }
     static locateFile(path) {
         // console.log(`finding for ${path}`)
         let currentPath = this.pwd([]);
@@ -41,28 +44,32 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
         // distributing path
         path = path.split('/')
         console.log(path);
-        let CurrentObject = { // default directory
-            ...this.locateObject['/']['home']['user']
-        }
         path.forEach((com, index) => {
             if (com == '' /* '/' - root directory */) {
+                this.CurrentObject = { ...this.locateObject['/'] }
+                this.currentDirectory = '/'
+                console.log(this.CurrentObject)
                 currentPath = '/'
             }
             else if (com == '.' /* './' - current directory */) currentPath = currentPath
-            else if (com == '..' /* '../' - prev directory */) currentPath = currentPath.split('/').slice(0, -1).join('/');
+            else if (com == '..' /* '../' - prev directory */) {
+                currentPath = currentPath.split('/').slice(0, -1).join('/');
+                console.log(currentPath)
+                this.currentDirectory = currentPath == '' ? '/' : currentPath;
+            }
             if (com != '' && com != '.' && com != '..')
                 /* direct current directory */ {
                 // for testing only
                 // this doesnt check if the path is there or not, will be fixed
 
-                if (CurrentObject[com] != undefined) {
-                    CurrentObject = CurrentObject[com];
+                if (this.CurrentObject[com] != undefined) {
+                    this.CurrentObject = this.CurrentObject[com];
                     this.currentDirectory = `${this.currentDirectory}/${com}`;
                     console.log(this.currentDirectory);
                 }
                 // console.log(this.locateObject[com]);
 
-                console.log('current Object: ', CurrentObject)
+                console.log('current Object: ', this.CurrentObject)
 
 
 
@@ -92,6 +99,13 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
 
     static readFile(command) {
         if (command.length > 1 || command.length < 0) return `cat: expected 1 arguements; got ${command.length - 1}`
+    }
+    static ls() {
+        let temp = '';
+        Object.keys(this.CurrentObject).map((item) => {
+            temp += `${item}    `;
+        })
+        return temp;
     }
 }
 export default Controller;

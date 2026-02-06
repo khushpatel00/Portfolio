@@ -93,7 +93,7 @@ export default function Terminal() {
 						</div>
 						<div style={{ whiteSpace: 'pre-wrap' }}
 							dangerouslySetInnerHTML={{
-								__html: DOMPurify.sanitize(item.result),
+								__html: DOMPurify.sanitize(item.result)
 							}}
 						/>
 					</div>
