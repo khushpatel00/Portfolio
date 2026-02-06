@@ -1,5 +1,5 @@
 class Controller {
-    static currentDirectory = '/home/user/Documents'
+    static currentDirectory = '/home/user'
     static auth = 'user'
 
     static help = `
@@ -15,7 +15,9 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                 'user': {
                     'Documents': {
                         'aboutme.txt': '',
-                        'projects.txt': '',
+                        'Projects': {
+                            'projects.txt': '',
+                        },
                         'contact.txt': '',
                     },
                     'Downloads': {},
@@ -38,23 +40,40 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
 
         // distributing path
         path = path.split('/')
-        // path.forEach((com, index) => {
-
-        // })
-        if(path[0] == '' /* '/' - root directory */) currentPath = '/'
-        else if(path[0] == '.' /* './' - current directory */) currentPath = currentPath
-        else if(path[0] == '..' /* '../' - prev directory */) currentPath = currentPath.split('/').slice(0, -1).join('/');
-        else /* direct current directory */ {
-            // for testing only
-            // this doesnt check if the path is there or not, will be fixed
-            currentPath = `${currentPath}/${path}`;
-            let currentPathObject = this.currentDirectory.split('/');
-            console.log(currentPathObject);
-            // Object.keys()
+        console.log(path);
+        let CurrentObject = { // default directory
+            ...this.locateObject['/']['home']['user']
         }
-        this.currentDirectory = currentPath
-        // console.log(this.currentDirectory);
-        
+        path.forEach((com, index) => {
+            if (com == '' /* '/' - root directory */) {
+                currentPath = '/'
+            }
+            else if (com == '.' /* './' - current directory */) currentPath = currentPath
+            else if (com == '..' /* '../' - prev directory */) currentPath = currentPath.split('/').slice(0, -1).join('/');
+            if (com != '' && com != '.' && com != '..')
+                /* direct current directory */ {
+                // for testing only
+                // this doesnt check if the path is there or not, will be fixed
+
+                if (CurrentObject[com] != undefined) {
+                    CurrentObject = CurrentObject[com];
+                    this.currentDirectory = `${this.currentDirectory}/${com}`;
+                    console.log(this.currentDirectory);
+                }
+                // console.log(this.locateObject[com]);
+
+                console.log('current Object: ', CurrentObject)
+
+
+
+            }
+            // currentPath = `${currentPath}/${path}`;
+            // let currentPathObject = this.currentDirectory.split('/');
+            // console.log(currentPathObject);
+            // this.currentDirectory = currentPath
+            // console.log(this.currentDirectory);
+        })
+
 
         // console.log(path)
 
