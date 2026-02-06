@@ -44,6 +44,7 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
         // distributing path
         path = path.split('/')
         console.log(path);
+        let result = ''
         path.forEach((com, index) => {
             if (com == '' /* '/' - root directory */) {
                 this.CurrentObject = { ...this.locateObject['/'] }
@@ -66,7 +67,7 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                     this.CurrentObject = this.CurrentObject[com];
                     this.currentDirectory = `${this.currentDirectory == '/' ? '' : this.currentDirectory}/${com}`;
                     console.log(this.currentDirectory);
-                }
+                } else result = `cd: the directory "${path.join('/')}" does not exist`
                 // console.log(this.locateObject[com]);
 
                 console.log('current Object: ', this.CurrentObject)
@@ -81,15 +82,12 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
             // console.log(this.currentDirectory);
         })
 
-
-        // console.log(path)
-
-
-        return null;
+        return result;
     }
     static changeDirectory(command) {
         if (command.length > 2 || command.length <= 1) return `cd: expected 1 arguements; got ${command.length - 1}`
         let result = this.locateFile(command[1])
+        return result;
     }
 
     static pwd(command) {
