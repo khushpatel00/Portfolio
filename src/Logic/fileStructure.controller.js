@@ -47,9 +47,9 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
         path.forEach((com, index) => {
             if (com == '' /* '/' - root directory */) {
                 this.CurrentObject = { ...this.locateObject['/'] }
+                currentPath = '/'
                 this.currentDirectory = '/'
                 console.log(this.CurrentObject)
-                currentPath = '/'
             }
             else if (com == '.' /* './' - current directory */) currentPath = currentPath
             else if (com == '..' /* '../' - prev directory */) {
@@ -64,7 +64,7 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
 
                 if (this.CurrentObject[com] != undefined) {
                     this.CurrentObject = this.CurrentObject[com];
-                    this.currentDirectory = `${this.currentDirectory}/${com}`;
+                    this.currentDirectory = `${this.currentDirectory == '/' ? '' : this.currentDirectory}/${com}`;
                     console.log(this.currentDirectory);
                 }
                 // console.log(this.locateObject[com]);
