@@ -13,6 +13,9 @@ export default function computeResult(command, setHistory, navigate) {
 	command = command.split(' ');
 	// console.log('getting results for ', command);
 	switch (command[0]) { // check for the root command
+		case '': 
+			return '';
+			break;
 		case 'help':
 			return Controller.help;
 			break;
