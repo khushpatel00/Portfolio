@@ -57,12 +57,12 @@ function Menu({noButton = false}) {
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
             </a>
-            <div className='absolute top-0 left-0 z-15'>
+            <div className='fixed top-0 left-0 z-15'>
                 <div className="stairsParent relative h-screen w-screen flex bg-transparent">
                     {[1, 2, 3, 4, 5].map((val, index) => (
                         <div key={index} className='w-1/5 relative h-full'>
                             <div ref={(el) => (stairRefWhite.current[index] = el)} className="absolute top-0 left-0 stair w-full h-full bg-white"></div>
-                            <div ref={(el) => (stairRef.current[index] = el)} className="absolute top-0 left-0 stair w-full h-full bg-black"></div>
+                            <div ref={(el) => (stairRef.current[index] = el)} className="absolute top-0 left-0 stair w-full h-full bg-zinc-950"></div>
                         </div>
                     ))}
                     <div className='flex flex-col z-20 content absolute top-1/2 w-full -translate-y-1/2' ref={contentRef}>
@@ -73,7 +73,7 @@ function Menu({noButton = false}) {
                             <FlowingMenu items={demoItems}
                                          speed={15}
                                          textColor="#ffffff"
-                                         bgColor="#000000"
+                                         bgColor="#09090b"
                                          marqueeBgColor="#ffffff"
                                          marqueeTextColor="#060010"
                                          borderColor="#ffffff"
