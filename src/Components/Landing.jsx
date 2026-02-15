@@ -1,5 +1,6 @@
 import LaserFlow from './LaserFlow';
 import { useRef } from 'react';
+import ProfileCard from './ProfileCard'
 
 {/* <div style={{ height: '500px', position: 'relative', overflow: 'hidden' }}>
   <LaserFlow />
@@ -94,6 +95,27 @@ export default function Landing() {
         }}
 
       />
+
+      <div className="absolute">
+        
+        <ProfileCard
+          name="Javi A. Torres"
+          title="Software Engineer"
+          handle="javicodes"
+          status="Online"
+          contactText="Contact Me"
+          avatarUrl="/path/to/avatar.jpg"
+          showUserInfo={false}
+          enableTilt={true}
+          enableMobileTilt={false}
+          onContactClick={() => console.log('Contact clicked')}
+          behindGlowColor="rgba(125, 190, 255, 0.67)"
+          iconUrl="/assets/demo/iconpattern.png"
+          behindGlowEnabled
+          innerGradient="linear-gradient(145deg,#60496e8c 0%,#71C4FF44 100%)"
+        />
+      </div>
+
     </div>
   );
 }
