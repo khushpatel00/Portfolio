@@ -15,8 +15,8 @@ function Home() {
             <Landing />
             <About />
             <Skills />
-            {/* <Projects />
-            <Achievements />
+            <Projects />
+            {/* <Achievements />
             <Education />
             <Contact /> */}
         </>

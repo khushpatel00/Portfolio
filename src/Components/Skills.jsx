@@ -2,22 +2,13 @@ import React from 'react'
 
 function Skills() {
   return (
-    <div className='flex flex-wrap'>
-      <div className='text-4xl basis-1/2 tracking-wider ps-10 mt-10'>
-        <p className='font-bold tracking-tight'>Interfaces: </p>
-        <span >HTML, CSS, Bootstrap, Tailwind, Layout Systems</span>
-      </div>
-      <div className='text-4xl basis-1/2 tracking-wider ps-10 mt-10'>
-        <p className='font-bold tracking-tight'>Motion & Interaction: </p>
-        <span >Css Animations, GSAP, ReactBits, FramerMotion</span>
-      </div>
-      <div className='text-4xl basis-1/2 tracking-wider ps-10 mt-10'>
-        <p className='font-bold tracking-tight'>Core Systems: </p>
-        <span >React, Express, NodeJS, MongoDB, <span className='line-through'>Postman</span></span>
-      </div>
-      <div className='text-4xl basis-1/2 tracking-wider ps-10 mt-10'>
-        <p className='font-bold tracking-tight'>Low Level Curiosity: </p>
-        <span >C, C++, Java, Unity Engine, Unreal Engine, Premiere Pro, Blender, Ricing</span>
+    <div className='flex justify-center flex-wrap'>
+      <div className='text-2xl ms-10 max-w-1/2'>
+        <span className='text-3xl font-semibold'>👋, Im khush</span>
+        <span className='ps-3 text-xl font-medium'>a so called, webdev</span>
+        <p className='pt-3'>I build high-performance web experiences with clean engineering, precise animation systems, and a focus on so called real-world usability.</p>
+        <p className='pt-3'>Every interface I ship is designed like a level: structured, optimized, and polished for smooth gameplay… except here the “players” are users, and the final boss is bad UX.</p>
+        <p className='pt-3'>My Gamified workflow combines strong fundamentals with motion-driven storytelling, where each page transition, component, or micro-interaction is tuned like game feel.</p>
       </div>
     </div>
   )

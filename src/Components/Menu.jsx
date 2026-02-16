@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import switchPage from '../Logic/PageSwitch'
 import FlowingMenu from './FlowingMenu'
 
-function Menu({noButton = false}) {
+function Menu({ noButton = false }) {
     const stairRef = useRef([]);
     const stairRefWhite = useRef([]);
     const iconRef = useRef(null);
@@ -34,6 +34,9 @@ function Menu({noButton = false}) {
 
     // let isClosed = true;
     const isClosedRef = useRef(true);
+    const handleClick = () => {
+        isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, stairRefWhite);
+    }
     useEffect(() => {
         isClosedRef.current = switchPage(false, iconRef, stairRef, stairRefWhite);
 
@@ -44,16 +47,14 @@ function Menu({noButton = false}) {
         window.addEventListener('cli:portfolio', onPortfolio);
         return () => window.removeEventListener('cli:portfolio', onPortfolio);
     }, []);
-    const handleClick = () => {
-        isClosedRef.current = switchPage(isClosedRef.current, iconRef, stairRef, stairRefWhite);
-    }
+
 
 
 
 
     return (
         <>
-            <a href='#' className='fixed duration-300 z-20 flex flex-col items-center justify-center top-0 right-0 bg-black w-1/8 h-10 px-20 cursor-pointer' id="menuButton" ref={iconRef} onClick={handleClick} style={{display: noButton == true && 'none'}}> 
+            <a href='#' className='fixed duration-300 z-20 flex flex-col items-center justify-center top-0 right-0 bg-black w-1/8 h-10 px-20 cursor-pointer' id="menuButton" ref={iconRef} onClick={handleClick} style={{ display: noButton == true && 'none' }}>
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
             </a>
@@ -71,12 +72,12 @@ function Menu({noButton = false}) {
                         {/*<Link to='/' className='text-4xl text-bold poppins'>Terminal</Link>*/}
                         <div style={{ height: '300px', position: 'relative' }}>
                             <FlowingMenu items={demoItems}
-                                         speed={15}
-                                         textColor="#ffffff"
-                                         bgColor="#09090b"
-                                         marqueeBgColor="#ffffff"
-                                         marqueeTextColor="#060010"
-                                         borderColor="#ffffff"
+                                speed={15}
+                                textColor="#ffffff"
+                                bgColor="#09090b"
+                                marqueeBgColor="#ffffff"
+                                marqueeTextColor="#060010"
+                                borderColor="#ffffff"
                             />
                         </div>
 
