@@ -21,14 +21,8 @@ let projects = [
     cover: 'groot_1.jpg'
   },
   {
-    name: 'DBSeeder',
-    stack: 'Javascript(FE), Node(BE)',
-    description: "A Project made at GDGC's Hackathon, PPSU Techsprint",
-    cover: 'groot_1.jpg'
-  },
-  {
     name: 'session0',
-    stack: 'Javascript',
+    stack: 'React',
     description: 'A browser-based window manager inspired by classic desktop operating systems (mainly windows XP), built with vanilla JavaScript. (Under Development)',
     cover: 'groot_1.jpg'
   },
@@ -36,14 +30,14 @@ let projects = [
 
 function Projects() {
   return (
-    <div className='sm:overflow-x-hidden md:overflow-hidden  sm:overflow-y-hidden md:overflow-y-hidden'>
+    <div className='md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden'>
 
-      <div style={{ height: '600px', position: 'relative' }} className=' -translate-x-1/8 scale-110'>
+      <div style={{ height: '600px', position: 'relative' }} className=' -translate-x-1/8 scale-110 text-white'>
         <CardSwap
           cardDistance={30}
           verticalDistance={50}
-          delay={3500}
-          pauseOnHover={false}
+          delay={3000}
+          pauseOnHover={true}
           onCardClick={(e) => console.log('clicked', e)}
         >
 

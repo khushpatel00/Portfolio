@@ -44,8 +44,18 @@ function Menu({ noButton = false }) {
         const onPortfolio = () => {
             handleClick();
         };
+
+        window.addEventListener('keydown', (e)=>{
+            if(e.key === 'Escape' && isClosedRef.current == false){
+                console.log('closing menu')
+                handleClick();
+            } 
+            console.log('keydown')
+        })
+
         window.addEventListener('cli:portfolio', onPortfolio);
         return () => window.removeEventListener('cli:portfolio', onPortfolio);
+        
     }, []);
 
 

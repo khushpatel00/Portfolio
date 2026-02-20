@@ -1,16 +1,29 @@
 @import "tailwindcss";
- *::-webkit-scrollbar{
+
+.bricolage {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+*::-webkit-scrollbar {
     width: 0;
     height: 0;
-    scroll-behavior: smooth;
- }
+}
 
-.jet{
+* {
+    scroll-behavior: smooth;
+}
+
+.jet {
     font-family: 'Jetbrains Mono', monospace;
 }
-.poppins{
+
+.poppins {
     font-family: 'Poppins', serif;
 }
-#terminalWindow{
-    font-family: SFMono ,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+
+#terminalWindow {
+    font-family: SFMono, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
 }

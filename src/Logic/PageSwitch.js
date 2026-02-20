@@ -1,6 +1,8 @@
 import { gsap } from 'gsap';
+let tl;
 function switchPage(isClosed, iconRef, stairRef, stairRefWhite) {
-    const tl = gsap.timeline();
+    if(tl) tl.kill();
+    tl = gsap.timeline();
     tl.set('body', {
         overflow: 'hidden'
     })
@@ -8,6 +10,7 @@ function switchPage(isClosed, iconRef, stairRef, stairRefWhite) {
     // console.log('is closed: ', isClosed)
     let menuIsClosed = isClosed;
     if (isClosed) { // opening menu
+        
         tl.set('body', {
             overflow: 'hidden'
         })
