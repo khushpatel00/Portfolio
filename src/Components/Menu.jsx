@@ -24,8 +24,8 @@ function Menu({ noButton = false }) {
             image: 'https://picsum.photos/600/400?random=2'
         },
         {
-            link: '#',
-            text: 'Lab (dropped)',
+            link: 'https://github.com/khushpatel00',
+            text: 'my Github Profile',
             image: 'https://picsum.photos/600/400?random=3'
         }
     ];

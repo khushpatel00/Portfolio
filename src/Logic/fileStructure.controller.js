@@ -6,6 +6,7 @@ class Controller {
 This Terminal is the actuall Portfolio of khushpatel00,
 for a better viewing experience, you can also visit my UI-Portfolio with command <span class='p-1 px-2 rounded-lg bg-zinc-800'>portfolio</span>, and then click Home
 
+<p class='text-4xl'> If you're not familiar with CLI, visit My <a href='/Portfolio' class='text-blue-400' style="text-decoration: underline wavy 2px #0096FF">Portfolio</a> </p>
 Supported Commands: cd, ls, pwd, clear, portfolio, help
 
 `
@@ -14,7 +15,7 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
             'home': {
                 'user': {
                     'Documents': {
-                        'aboutme.txt': 'github will show better information than here 🙂👍️',
+                        'aboutme.txt': `github will show better information than here 🙂👍️ \nplease go to my github (just run 'portfolio')`,
                         'Projects': {
                             'projects.txt': '\nim too lazy to put all projects here😫\nplease go to my github🙂\n',
                         },

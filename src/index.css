@@ -28,8 +28,18 @@
 
 #terminalWindow {
     font-family: SFMono, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    color: #faf2e9
 }
 
+/* #contact{
+    background-image: url('/images/mesh-461.png');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    color: white;
+    border-radius: 100px;
+} */
 
 /* locomotive */
 html.lenis,

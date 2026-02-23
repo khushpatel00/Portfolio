@@ -13,7 +13,7 @@ export default function Landing() {
         height: '100vh',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#fffbf7'
+        backgroundColor: '#faf2e9'
       }}
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -58,7 +58,7 @@ export default function Landing() {
         transform: 'translateX(-50%)',
         width: '86%',
         height: '60%',
-        backgroundColor: '#fffbf7',
+        backgroundColor: '#faf2e9',
         borderRadius: '20px',
         border: '2px solid #e4e4e7',
         display: 'flex',

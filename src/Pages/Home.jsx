@@ -23,15 +23,15 @@ function Home() {
                 <About />
                 <Skills />
             </div>
-            <div data-scroll data-scroll-speed="-0.1">
+            <div data-scroll data-scroll-speed="0">
                 <Projects />
                 <Playground />
                 <Achievements />
                 {/* <Education /> */}
             </div>
-            {/* <Contact /> */}
+            <Contact />
 
-            <div className={'mx-auto bg-amber-100 rounded-t-2xl w-4/5 py-5 px-1 mt-5 text-center text-2xl'} >This Portfolio is Under Development, Feel Free to raise an issue on <a href='https://github.com/khushpatel00/portfolio' target='_blank' style={{ textDecoration: 'underline wavy 1px #3f3f46' }}>Github</a>, if you find any bug, or feel something off</div>
+            <div className={'mx-auto bg-amber-100 rounded-t-2xl w-4/5 py-5 px-1 mt-20 text-center text-2xl'} >This Portfolio is Under Development, Feel Free to raise an issue on <a href='https://github.com/khushpatel00/portfolio' target='_blank' style={{ textDecoration: 'underline wavy 1px #3f3f46' }}>Github</a>, if you find any bug, or feel something off</div>
         </>
     )
 }

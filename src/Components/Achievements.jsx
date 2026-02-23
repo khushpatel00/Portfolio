@@ -31,7 +31,7 @@ function Achievements() {
     <div>
       <div className='md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden'>
         <h2 className={'text-7xl w-2/3 mx-auto px-5 mt-20 bricolage font-bold'}>achievements</h2>
-        <div className='flex w-2/3 mx-auto flex-row flex-wrap gap-0.5'>
+        <div className='ps-10 pt-5 flex w-2/3 mx-auto flex-row flex-wrap gap-0.5'>
           {achievementsList.map((ac, i) => {
 
             return (
