@@ -14,7 +14,7 @@ export default function Landing() {
         height: '100vh',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#060010'
+        backgroundColor: '#f2f8fe'
       }}
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -36,19 +36,19 @@ export default function Landing() {
     >
       <LaserFlow
         horizontalBeamOffset={0.1}
-        verticalBeamOffset={0.0}
-        color="#CF9EFF"
-        horizontalSizing={0.5}
-        verticalSizing={3}
+        verticalBeamOffset={0}
+        color="#d7afff"
+        horizontalSizing={0}
+        verticalSizing={0}
         wispDensity={1}
         wispSpeed={30}
-        wispIntensity={5}
+        wispIntensity={2}
         flowSpeed={0.65}
         flowStrength={0.25}
         fogIntensity={0.45}
-        fogScale={0.1}
-        fogFallSpeed={0.6}
-        decay={1.1}
+        fogScale={0}
+        fogFallSpeed={3}
+        decay={0}
         falloffStart={1.2}
       />
 
@@ -59,13 +59,13 @@ export default function Landing() {
         transform: 'translateX(-50%)',
         width: '86%',
         height: '60%',
-        backgroundColor: '#060010',
+        backgroundColor: '#f2f8fe',
         borderRadius: '20px',
-        border: '2px solid #FF79C6',
+        border: '2px solid #e4e4e7',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        color: 'white',
+        color: 'black',
         fontSize: '2rem',
         zIndex: 6
       }} className='flex flex-row text-center'>

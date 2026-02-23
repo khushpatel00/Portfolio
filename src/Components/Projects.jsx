@@ -39,9 +39,9 @@ function Projects() {
                 <div className={'flex items-end justify-between flex-wrap'}>
                   <h3 className='text-3xl jet pe-2'>{pr.name}</h3>
                   <p className={"text-lg"}>{pr.stack}</p>
-                  <a href={"https://github.com/khushpatel00/"+pr.name} className={'text-xl ps-1'} style={{textDecorationStyle: 'wavy', textDecorationColor: 'black', textDecorationThickness: '1px'}}>Github</a>
+                  <a href={"https://github.com/khushpatel00/" + pr.name} className={'text-xl ps-1'} style={{ textDecorationStyle: 'wavy', textDecorationColor: 'black', textDecorationThickness: '1px' }}>Github</a>
                 </div>
-                <img src={'/images/' + pr.cover} alt="" className={'rounded-xl my-2'}/>
+                <img src={'/images/' + pr.cover} alt="" className={'rounded-xl my-2'} />
                 <p className={"text-xl text-zinc-700 pt-1"}>{pr.description}</p>
               </div>
             </div>

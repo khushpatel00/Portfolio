@@ -71,7 +71,7 @@ uniform float uFade;
 #define W_BOTTOM_EXP 10.0
 
 // Volumetric fog controls
-#define FOG_ON 1
+#define FOG_ON 0
 #define FOG_CONTRAST 1.2
 #define FOG_SPEED_U 0.1
 #define FOG_SPEED_V -0.1
@@ -88,11 +88,11 @@ uniform float uFade;
 #define FOG_EDGE_MIX 0.5
 
 // Horizontal vignette for the fog volume
-#define HFOG_EDGE_START 0.20
-#define HFOG_EDGE_END 0.98
-#define HFOG_EDGE_GAMMA 1.4
-#define HFOG_Y_RADIUS 25.0
-#define HFOG_Y_SOFT 60.0
+#define HFOG_EDGE_START 0.1
+#define HFOG_EDGE_END 0.1
+#define HFOG_EDGE_GAMMA 0.1
+#define HFOG_Y_RADIUS 0.1
+#define HFOG_Y_SOFT 0.1
 
 // Beam extents and edge masking
 #define EDGE_X0 0.22
@@ -100,7 +100,7 @@ uniform float uFade;
 #define EDGE_X_GAMMA 1.25
 #define EDGE_LUMA_T0 0.0
 #define EDGE_LUMA_T1 2.0
-#define DITHER_STRENGTH 1.0
+#define DITHER_STRENGTH 0.1
 
     float g(float x){return x<=0.00031308?12.92*x:1.055*pow(x,1.0/2.4)-0.055;}
     float bs(vec2 p,vec2 q,float powr){
