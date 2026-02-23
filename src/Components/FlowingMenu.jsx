@@ -125,6 +125,8 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
                 className="flex items-center justify-center h-full relative cursor-pointer uppercase no-underline font-semibold text-[4vh]"
                 to={link}
                 onMouseEnter={handleMouseEnter}
+                onFocus={handleMouseEnter}
+                onBlur={handleMouseLeave}
                 onMouseLeave={handleMouseLeave}
                 style={{ color: textColor }}
             >

@@ -87,11 +87,11 @@ function switchPage(isClosed, iconRef, stairRef, stairRefWhite) {
             y: '0',
             duration: 0,
         })
-        tl.fromTo(iconRef.current, {
-            opacity: 0
-        }, {
-            opacity: 1
-        })
+        // tl.fromTo(iconRef.current, {
+        //     opacity: 0
+        // }, {
+        //     opacity: 1
+        // })
         menuIsClosed = true
         // console.log('after animation isclosed: ', isClosed)
         // setTimeout(tl.clear(), 5000)

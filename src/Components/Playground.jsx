@@ -1,0 +1,47 @@
+import React from 'react'
+
+function Playground() {
+    return (
+        <div className={'md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden'}>
+            <h2 className={'text-7xl w-2/3 mx-auto px-5 mt-20 bricolage font-bold'}>
+                my Little Playground
+            </h2>
+            <div className='flex w-2/3 mx-auto flex-row flex-wrap pt-10'>
+
+                <div className='flex px-10 items-start justify-start align-top flex-wrap flex-row basis-1/3'>
+                    <h3 className={'text-4xl bricolage font-medium basis-full'}>Languages:</h3>
+                    <div className={'flex flex-col flex-wrap ps-3 text-2xl basis-full'}>
+                        <p>JavaScript</p>
+                        <p>C / C++</p>
+                        <p>C# (Unity)</p>
+                        <p>Java (beginner)</p>
+                        <p>Python (beginner)</p>
+                    </div>
+                </div>
+
+
+                <div className='flex px-10 items-start justify-start align-top flex-wrap flex-row basis-1/3'>
+                    <h3 className={'text-4xl bricolage font-medium basis-full'}>Tools:</h3>
+                    <div className={'flex flex-col flex-wrap ps-3 text-2xl basis-full'}>
+                        <p>GSAP</p>
+                        <p>Framer Motion</p>
+                        <p>Locomotive scroll (beginner)</p>
+                        <p>Tailwind</p>
+                        <p>Postman</p>
+                        <p>Replit</p>
+                    </div>
+                </div>
+                <div className='flex px-10 items-start justify-start align-top flex-wrap flex-row basis-1/3'>
+                    <h3 className={'text-4xl bricolage font-medium basis-full'}>Core:</h3>
+                    <div className={'flex flex-col flex-wrap ps-3 text-2xl basis-full'}>
+                        <p>React</p>
+                        <p>NodeJS</p>
+                        <p>NextJS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export default Playground

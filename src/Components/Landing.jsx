@@ -1,6 +1,5 @@
 import LaserFlow from './LaserFlow';
-import { useRef } from 'react';
-
+import { useRef } from 'react'; 
 {/* <div style={{ height: '500px', position: 'relative', overflow: 'hidden' }}>
   <LaserFlow />
 </div> */}
@@ -14,7 +13,7 @@ export default function Landing() {
         height: '100vh',
         position: 'relative',
         overflow: 'hidden',
-        backgroundColor: '#f2f8fe'
+        backgroundColor: '#fffbf7'
       }}
       onMouseMove={(e) => {
         const rect = e.currentTarget.getBoundingClientRect();
@@ -59,7 +58,7 @@ export default function Landing() {
         transform: 'translateX(-50%)',
         width: '86%',
         height: '60%',
-        backgroundColor: '#f2f8fe',
+        backgroundColor: '#fffbf7',
         borderRadius: '20px',
         border: '2px solid #e4e4e7',
         display: 'flex',
@@ -96,8 +95,6 @@ export default function Landing() {
         }}
 
       />
-
-
 
     </div>
   );
