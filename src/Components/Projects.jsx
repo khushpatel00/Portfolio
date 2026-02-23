@@ -31,31 +31,22 @@ let projects = [
 function Projects() {
   return (
     <div className='md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden'>
-
-      <div style={{ height: '600px', position: 'relative' }} className=' -translate-x-1/8 scale-110 text-white'>
-        <CardSwap
-          cardDistance={30}
-          verticalDistance={50}
-          delay={3000}
-          pauseOnHover={true}
-          onCardClick={(e) => console.log('clicked', e)}
-        >
-
-          {projects.map((pr, i) => {
-
-            return (
-              <Card>
-                <div className="relative w-full h-full overflow-hidden p-3">
-                  <h3 className='z-0 text-2xl inline'>{pr.name}</h3>
-                  <p className={pr.stack.length > 10 ? 'pb-3' : 'inline text-sm ps-1'}>{pr.stack}</p>
-                  <p className='z-0 text-lg'>{pr.description}</p>
-                  <img src={'/images/' + pr.cover} className='w-full h-full object-cover absolute top-0 left-0 -z-10' alt="" srcset="" />
+      <div className='flex w-2/3 mx-auto flex-row flex-wrap'>
+        {projects.map((pr, i) => {
+          return (
+            <div key={i} className='basis-full xl:basis-1/2 p-3'>
+              <div className='bg-emerald-50 rounded-2xl text-zinc-900 px-5 py-3'>
+                <div className={'flex items-end justify-between flex-wrap'}>
+                  <h3 className='text-3xl jet pe-2'>{pr.name}</h3>
+                  <p className={"text-lg"}>{pr.stack}</p>
+                  <a href={"https://github.com/khushpatel00/"+pr.name} className={'text-xl ps-1'} style={{textDecorationStyle: 'wavy', textDecorationColor: 'black', textDecorationThickness: '1px'}}>Github</a>
                 </div>
-              </Card>
-            )
-          })}
-
-        </CardSwap>
+                <img src={'/images/' + pr.cover} alt="" className={'rounded-xl my-2'}/>
+                <p className={"text-xl text-zinc-700 pt-1"}>{pr.description}</p>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
