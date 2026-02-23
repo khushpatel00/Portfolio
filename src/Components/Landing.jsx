@@ -76,7 +76,7 @@ export default function Landing() {
 
       <img
         ref={revealImgRef}
-        src="/path/to/image.jpg"
+        src="/images/mesh-custom"
         alt="Reveal effect"
         style={{
           position: 'absolute',

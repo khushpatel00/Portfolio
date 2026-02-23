@@ -14,12 +14,12 @@ function Menu({ noButton = false }) {
 
     const Links = [
         {
-            link: '/Portfolio',
+            link: '/',
             text: 'Home',
             image: 'https://picsum.photos/600/400?random=1'
         },
         {
-            link: '/',
+            link: '/nerd',
             text: 'Terminal',
             image: 'https://picsum.photos/600/400?random=2'
         },

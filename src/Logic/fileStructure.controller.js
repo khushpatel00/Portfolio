@@ -6,7 +6,7 @@ class Controller {
 This Terminal is the actuall Portfolio of khushpatel00,
 for a better viewing experience, you can also visit my UI-Portfolio with command <span class='p-1 px-2 rounded-lg bg-zinc-800'>portfolio</span>, and then click Home
 
-<p class='text-4xl'> If you're not familiar with CLI, visit My <a href='/Portfolio' class='text-blue-400' style="text-decoration: underline wavy 2px #0096FF">Portfolio</a> </p>
+<p class='text-4xl'> If you're not familiar with CLI, visit My <a href='/' class='text-blue-400' style="text-decoration: underline wavy 2px #0096FF">Portfolio</a> </p>
 Supported Commands: cd, ls, pwd, clear, portfolio, help
 
 `
