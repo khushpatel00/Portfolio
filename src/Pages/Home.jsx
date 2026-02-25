@@ -9,8 +9,6 @@ import Contact from '../Components/Contact'
 import Playground from '../Components/Playground'
 import LocomotiveScroll from 'locomotive-scroll';
 
-
-
 function Home() {
     const scroll = new LocomotiveScroll();
     return (

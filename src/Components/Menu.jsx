@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import switchPage from '../Logic/PageSwitch'
 import FlowingMenu from './FlowingMenu'
 
-function Menu({ noButton = false }) {
+function Menu() {
     const stairRef = useRef([]);
     const stairRefWhite = useRef([]);
     const iconRef = useRef(null);
@@ -64,7 +64,7 @@ function Menu({ noButton = false }) {
 
     return (
         <>
-            <a href='#' className='fixed duration-300 z-50 flex flex-col items-center justify-center top-0 right-0 bg-zinc-950 w-1/8 h-10 px-20 cursor-pointer' id="menuButton" ref={iconRef} onClick={handleClick} style={{ display: noButton == true && 'none' }}>
+            <a href='#' className='fixed duration-300 z-50 flex flex-col items-center justify-center top-0 right-0 bg-zinc-950 w-1/8 h-10 px-20 cursor-pointer' id="menuButton" ref={iconRef} onClick={handleClick}>
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
                 <div className='duration-300 w-8 h-px my-1 bg-white'></div>
             </a>

@@ -1,5 +1,5 @@
 import gsap from 'gsap';
-import {useEffect, useRef, useState} from 'react'
+import { useEffect, useRef, useState } from 'react'
 import computeResult from '../Logic/computeResult';
 import Menu from '../Components/Menu';
 import DOMPurify from 'dompurify'
@@ -72,7 +72,7 @@ export default function Terminal() {
         if (result !== 'clear') {
             setHistory(prev => [
                 ...prev,
-                {command, result, path}
+                { command, result, path }
             ]);
         }
 
@@ -84,15 +84,22 @@ export default function Terminal() {
     }
     return (
         <>
-            {/* hides the menu click button on top */}
-            <Menu noButton={true}/>
+            {/* keeping the button now, for mobile devices */}
+            {/* <Menu noButton={true}/> */}
+            <Menu />
             <div id='terminalWindow' className='text-2xl min-h-screen bg-zinc-900 text-white'>
                 <div className='mb-10 flex flex-col'>
                     <span className='text-3xl tracking-tight'>khushpatel - cli portfolio</span>
 
                     <span>
-						To print available commands, type 'help' and press Enter
-					</span>
+                        To print available commands, type 'help' and press Enter
+                    </span>
+                    <span className='pt-10'>
+                        For Mobile devices, prefer clicking on the menu on the top of the screen, followed by Home,
+                    </span>
+                    <span>
+                        as the touch screen implementation is still in development for this terminal
+                    </span>
                 </div>
 
                 {history.map((item, index) => (
@@ -103,17 +110,17 @@ export default function Terminal() {
                                 {item.command}
                             </div>
                         </div>
-                        <div style={{whiteSpace: 'pre-wrap'}}
-                             dangerouslySetInnerHTML={{
-                                 __html: DOMPurify.sanitize(item.result)
-                             }}
+                        <div style={{ whiteSpace: 'pre-wrap' }}
+                            dangerouslySetInnerHTML={{
+                                __html: DOMPurify.sanitize(item.result)
+                            }}
                         />
                     </div>
                 ))}
 
                 <div id='current' className='relative  flex items-center'>
                     user@cli-portfolio {Controller.currentDirectory === '/home/user' ? '~' : Controller.currentDirectory.split('/').pop()} $&nbsp;
-                    <p id='termInput' style={{whiteSpace: 'pre-wrap'}} ref={inputRef}>
+                    <p id='termInput' style={{ whiteSpace: 'pre-wrap' }} ref={inputRef}>
 
                     </p>
                     <span ref={cursorRef} className='bg-zinc-200 w-4 h-8 cursor'></span>
