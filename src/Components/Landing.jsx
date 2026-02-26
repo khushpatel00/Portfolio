@@ -56,8 +56,6 @@ export default function Landing() {
         top: '50%',
         left: '50%',
         transform: 'translateX(-50%)',
-        width: '86%',
-        height: '60%',
         backgroundColor: '#faf2e9',
         borderRadius: '20px',
         border: '2px solid #e4e4e7',
@@ -67,8 +65,8 @@ export default function Landing() {
         color: 'black',
         fontSize: '2rem',
         zIndex: 6
-      }} className='flex flex-row text-center'>
-        <div className='max-w-1/2'>
+      }} className='flex flex-row text-center md:w-[86%] h-[60%] w-full'>
+        <div className='md:max-w-1/2 w-full'>
           <p className='leading-7'>Frontend Engineer building motion-first interfaces & interactive systems.</p>
           <p className='text-sm tracking-tight'>Web · Animation · Game Dev Crossover</p>
         </div>

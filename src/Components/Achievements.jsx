@@ -8,17 +8,17 @@ function Achievements() {
       desc: 'Won in-house C Mini Competetion',
       image: 'techwar-winning(2024).png'
     },
-    {
-      title: 'C MINI',
-      locate: 'Techwar, RNW (2024)',
-      desc: 'Participated in-house C MINI Competetion',
-      image: 'techwar-2024-c-mini-participation.png'
-    },
+   
     {
       title: 'C Tsunami',
       locate: 'Techwar, RNW (2026)',
       desc: 'Won in-house C Tsunami Competetion',
       image: 'techwar-ctsunami(2026).jpg'
+    }, {
+      title: 'C MINI',
+      locate: 'Techwar, RNW (2024)',
+      desc: 'Participated in-house C MINI Competetion',
+      image: 'techwar-2024-c-mini-participation.png'
     },
     {
       title: 'Webhacks',
