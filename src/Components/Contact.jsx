@@ -2,7 +2,7 @@ import React from 'react'
 
 function Contact() {
   return (
-    <div id='contact' className={'md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden duration-300 '}>
+    <div id='contact' className={'md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden duration-300 py-20'}>
       <h2 className={'text-7xl  md:w-2/3  sm:w-9/10 duration-300 mx-auto px-5 mt-20 bricolage font-bold'}>Contact Me</h2>
       <div className='flex  md:w-2/3  sm:w-9/10 duration-300 ps-5 mt-2.5 mx-auto flex-col flex-wrap gap-0.5'>
         {/* <h4 className={'text-2xl '}>React me out on: </h4> */}
