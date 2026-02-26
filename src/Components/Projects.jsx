@@ -31,8 +31,8 @@ let projects = [
 function Projects() {
   return (
     <div className='md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden'>
-      <h2 className={'text-7xl md:w-2/3 w-9/10 duration-300 mx-auto px-5 mt-20 bricolage font-bold'}>projects</h2>
-      <div className='flex md:w-2/3 w-9/10 duration-300 mx-auto flex-row flex-wrap'>
+      <h2 className={'text-7xl w-full md:w-2/3 w-full sm:w-9/10 duration-300 mx-auto px-5 mt-20 bricolage font-bold'}>projects</h2>
+      <div className='flex w-full md:w-2/3 w-full sm:w-9/10 duration-300 mx-auto flex-row flex-wrap'>
         {projects.map((pr, i) => {
           return (
             <div key={i} className='basis-full xl:basis-1/2 p-3 duration-300'>

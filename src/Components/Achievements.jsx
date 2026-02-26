@@ -36,8 +36,8 @@ function Achievements() {
   return (
     <div>
       <div className='md:overflow-hidden sm:overflow-y-hidden md:overflow-y-hidden lg:overflow-x-hidden md:overflow-x-hidden sm:overflow-x-hidden overflow-x-hidden duration-300'>
-        <h2 className={'text-7xl md:w-2/3 w-9/10 duration-300 mx-auto px-5 mt-20 bricolage font-bold'}>achievements</h2>
-        <div className='ps-10 pt-5 flex md:w-2/3 w-9/10 duration-300 mx-auto flex-row flex-wrap'>
+        <h2 className={'text-7xl  md:w-2/3 w-full sm:w-9/10 duration-300 md:mx-auto ps-1 md:px-5 mt-20 bricolage font-bold'}>achievements</h2>
+        <div className='md:ps-10 ps-2 pt-5 flex  md:w-2/3 w-full sm:w-9/10 duration-300 mx-auto flex-row flex-wrap'>
           {achievementsList.map((ac, i) => {
             return (
               <div key={i} className={` p-1.5 min-h-[300px] duration-300 max-h-fit basis-full ${i % 3 ? 'lg:basis-2/5' : 'lg:basis-3/5'} ${i == 4 && 'lg:basis-full'}`}>
