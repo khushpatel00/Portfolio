@@ -6,7 +6,7 @@ let projects = [
     name: 'Termed',
     stack: 'React',
     description: 'Terminal within the boundaries of Browser',
-    cover: 'groot_1.jpg'
+    cover: 'termed_preview.png'
   },
   {
     name: 'driveman',
@@ -18,13 +18,13 @@ let projects = [
     name: 'WeatherNow',
     stack: 'Javascript, GSAP',
     description: 'Weather app utilized with open-meteo',
-    cover: 'groot_1.jpg'
+    cover: 'weathernow_preview.png'
   },
   {
     name: 'session0',
     stack: 'React',
     description: "A browser-based window Manager, ie. linux's ricing on browser level",
-    cover: 'groot_1.jpg'
+    cover: 'session0_preview.png'
   },
 ]
 
