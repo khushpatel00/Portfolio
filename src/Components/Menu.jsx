@@ -47,10 +47,10 @@ function Menu() {
 
         window.addEventListener('keydown', (e)=>{
             if(e.key === 'Escape' && isClosedRef.current == false){
-                console.log('closing menu')
+                // console.log('closing menu')
                 handleClick();
             } 
-            console.log('keydown')
+            // console.log('keydown')
         })
 
         window.addEventListener('cli:portfolio', onPortfolio);

@@ -55,7 +55,7 @@ function MenuItem({ link, text, image, speed, textColor, marqueeBgColor, marquee
             const viewportWidth = window.innerWidth;
             const needed = Math.ceil(viewportWidth / contentWidth) + 2;
             setRepetitions(parseInt(Math.max(4, needed)));
-            console.log('flowing menu ----- repetation: ', repetitions)
+            // console.log('flowing menu ----- repetation: ', repetitions)
         };
 
         calculateRepetitions();

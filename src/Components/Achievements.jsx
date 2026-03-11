@@ -8,7 +8,7 @@ function Achievements() {
       desc: 'Won in-house C Mini Competetion',
       image: 'techwar-winning(2024).png'
     },
-   
+
     {
       title: 'C Tsunami',
       locate: 'Techwar, RNW (2026)',
@@ -40,7 +40,7 @@ function Achievements() {
         <div className='md:ps-10 ps-2 pt-5 flex  md:w-2/3 w-full sm:w-9/10 duration-300 mx-auto flex-row flex-wrap'>
           {achievementsList.map((ac, i) => {
             return (
-              <div key={i} className={` p-1.5 min-h-[300px] duration-300 max-h-fit basis-full ${i % 3 ? 'lg:basis-2/5' : 'lg:basis-3/5'} ${i == 4 && 'lg:basis-full'}`}>
+              <div key={i} className={` p-1.5 min-h-75 duration-300 max-h-fit basis-full ${i % 3 ? 'lg:basis-2/5' : 'lg:basis-3/5'} ${i == 4 && 'lg:basis-full'}`}>
                 <div className={`bg-zinc-100 rounded-2xl justify-around flex flex-col p-5 py-3 w-full h-full`}>
                   <div>
                     <h3 className='text-4xl jet text-wrap'>{ac.title}</h3>

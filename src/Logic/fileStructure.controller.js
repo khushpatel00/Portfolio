@@ -24,14 +24,15 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                     'Downloads': {},
                     'emptyFile.txt': 'nothn here, btw',
                 },
-                'admin': {
-
-                }
+                'admin': null
             },
-            'var': {},
-            'media': {},
-            'mnt': {},
-            'root': {},
+
+            // null == access restricted
+
+            'var': null,
+            'media': null,
+            'mnt': null,
+            'root': null,
         }
     }
     static CurrentObject = { // default directory
@@ -40,23 +41,23 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
     static locateFile(path) {
         // console.log(`finding for ${path}`)
         let currentPath = this.pwd([]);
-        console.log(`jumping ${currentPath} to ${path}`);
+        // console.log(`jumping ${currentPath} to ${path}`);
 
         // distributing path
         path = path.split('/')
-        console.log(path);
+        // console.log(path);
         let result = ''
         path.forEach((com) => {
             if (com === '' /* '/' - root directory */) {
                 this.CurrentObject = { ...this.locateObject['/'] }
                 currentPath = '/'
                 this.currentDirectory = '/'
-                console.log(this.CurrentObject)
+                // console.log(this.CurrentObject)
             }
             // else if (com == '.' /* './' - current directory */) currentPath = currentPath // this is useless
             else if (com === '..' /* '../' - prev directory */) {
                 currentPath = currentPath.split('/').slice(0, -1).join('/');
-                console.log(currentPath)
+                // console.log(currentPath)
                 this.currentDirectory = currentPath === '' ? '/' : currentPath;
             }
             if (com !== '' && com !== '.' && com !== '..')
@@ -72,11 +73,11 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                         this.CurrentObject = this.CurrentObject[com];
                         this.currentDirectory = `${this.currentDirectory === '/' ? '' : this.currentDirectory}/${com}`;
                     }
-                    console.log(this.currentDirectory);
+                    // console.log(this.currentDirectory);
                 } else result = `cd: the directory "${path.join('/')}" does not exist`
                 // console.log(this.locateObject[com]);
 
-                console.log('current Object: ', this.CurrentObject)
+                // console.log('current Object: ', this.CurrentObject)
             }
             // currentPath = `${currentPath}/${path}`;
             // let currentPathObject = this.currentDirectory.split('/');
@@ -113,7 +114,7 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                 else if (com === '.' /* './' - current directory */) tempDirectory = currentPath
                 else if (com === '..' /* '../' - prev directory */) {
                     currentPath = currentPath.split('/').slice(0, -1).join('/');
-                    console.log(currentPath)
+                    // console.log(currentPath)
                     tempDirectory = currentPath === '' ? '/' : currentPath;
                 }
                 if (com !== '' && com !== '.' && com !== '..') {
@@ -124,17 +125,17 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
                             tempObject = tempObject[com];
                             tempDirectory = `${tempDirectory === '/' ? '' : tempDirectory}/${com}`;
                         }
-                        console.log(tempDirectory);
+                        // console.log(tempDirectory);
                     } else fileContent = `cat: file "${command[0]}" does not exist`
-                    console.log('current Object: ', tempObject)
+                    // console.log('current Object: ', tempObject)
                     fileContent = tempObject[command[1].split('/').pop()]
-                    console.log(fileContent, tempObject, command[1], command[1].split('/'));
+                    // console.log(fileContent, tempObject, command[1], command[1].split('/'));
                 }
             })
             
         }
         // fileContent == `cat: cant find ${command[1].split('/')}`
-        console.log(fileContent);
+        // console.log(fileContent);
         return fileContent
     }
     static changeDirectory(command) {

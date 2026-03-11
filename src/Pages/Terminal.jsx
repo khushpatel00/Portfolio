@@ -60,7 +60,7 @@ export default function Terminal() {
     // }, 400)
 
     const handleCommandInput = (command) => {
-        console.log('input command: ', command);
+        // console.log('input command: ', command);
         // let result = ''
         // console.log(history)
         // setHistory([
@@ -118,8 +118,9 @@ export default function Terminal() {
                     </div>
                 ))}
 
-                <div id='current' className='relative  flex items-center'>
-                    user@cli-portfolio {Controller.currentDirectory === '/home/user' ? '~' : Controller.currentDirectory.split('/').pop()} $&nbsp;
+                <div id='current' className='relative flex items-center'>
+                    {/* user@cli-portfolio {Controller.currentDirectory === '/home/user' ? '~' : Controller.currentDirectory.split('/').pop()} $&nbsp; */}
+                    {Controller.auth}@cli-portfolio {Controller.currentDirectory === '/home/user' ? '~' : Controller.currentDirectory.split('/').pop()} $&nbsp;
                     <p id='termInput' style={{ whiteSpace: 'pre-wrap' }} ref={inputRef}>
 
                     </p>

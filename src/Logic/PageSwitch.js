@@ -48,7 +48,7 @@ function switchPage(isClosed, iconRef, stairRef, stairRefWhite) {
         iconRef.current.children[1].className = 'duration-300 m-0 p-0 -translate-y-1/2 w-8 h-px -rotate-45 bg-white'
         // tl.clear()
         menuIsClosed = false;
-        console.log('timeline ended')
+        // console.log('timeline ended')
     } else { // closing menu
         tl.set('.stairsParent', { display: 'flex' })
         // document.querySelector("body").style.overflow = 'hidden'
