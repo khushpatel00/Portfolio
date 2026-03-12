@@ -9,7 +9,7 @@ function Contact() {
         <div className='text-2xl flex flex-row flex-wrap items-end ps-5 duration-300'>
 
           <div className='flex flex-row items-end md:basis-1/2 basis-full'>
-            <h5 className='text-3xl font-semibold bricolage'>Resume</h5>: <a href='/khushpatel-resume.pdf' download target='_blank' style={{ textDecoration: 'underline wavy 1px #3f3f46' }} className='jet ps-3 wrap-anywhere'>Download</a>
+            <h5 className='text-3xl font-semibold bricolage'>Resume</h5>: <a href='/resume_283125.pdf' download target='_blank' style={{ textDecoration: 'underline wavy 1px #3f3f46' }} className='jet ps-3 wrap-anywhere'>Download</a>
           </div>
           <div className='flex flex-row items-end md:basis-1/2 basis-full'>
             <h5 className='text-3xl font-semibold bricolage'>Github</h5>: <a href='https://github.com/khushpatel00' target='_blank' style={{ textDecoration: 'underline wavy 1px #3f3f46' }} className='jet ps-3 wrap-anywhere'>khushpatel00</a>
