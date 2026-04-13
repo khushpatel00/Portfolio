@@ -7,7 +7,7 @@ This Terminal is the actuall Portfolio of khushpatel00,
 for a better viewing experience, you can also visit my UI-Portfolio with command <span class='p-1 px-2 rounded-lg bg-zinc-800'>portfolio</span>, and then click Home
 
 <p class='text-4xl'> If you're not familiar with CLI, visit My <a href='/' class='text-blue-400' style="text-decoration: underline wavy 2px #0096FF">Portfolio</a> </p>
-Supported Commands: cd, ls, pwd, clear, portfolio, help
+Supported Commands: cd, ls, pwd, cat, clear, portfolio, help
 
 `
     static locateObject = {
@@ -86,8 +86,8 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
             // console.log(this.currentDirectory);
         })
 
-        if(this.auth !== 'admin'){
-            if(this.currentDirectory.split('/')[2] === 'admin'){
+        if (this.auth !== 'admin') {
+            if (this.currentDirectory.split('/')[2] === 'admin') {
                 this.currentDirectory = '/home/user';
                 this.CurrentObject = { // default directory
                     ...this.locateObject['/']['home']['user']
@@ -100,43 +100,47 @@ Supported Commands: cd, ls, pwd, clear, portfolio, help
     }
     static readFile(command) {
         let fileContent = '', tempDirectory = this.currentDirectory, tempObject = { ...this.CurrentObject };
-        if (command[1].split('/').length <= 1) {
-            fileContent = this.CurrentObject[command[1]]
-        } else {
-            let currentPath = this.pwd([]);
-            command[1].split('/').forEach((com) => {
-                if (com === '' /* '/' - root directory */) {
-                    tempObject = { ...this.locateObject['/'] }
-                    tempDirectory = '/'
-                    // this.currentDirectory = '/'
-                    // console.log(this.CurrentObject)
-                }
-                else if (com === '.' /* './' - current directory */) tempDirectory = currentPath
-                else if (com === '..' /* '../' - prev directory */) {
-                    currentPath = currentPath.split('/').slice(0, -1).join('/');
-                    // console.log(currentPath)
-                    tempDirectory = currentPath === '' ? '/' : currentPath;
-                }
-                if (com !== '' && com !== '.' && com !== '..') {
-                    if (tempObject[com] !== undefined) {
-                        if (typeof tempObject[com] != 'object') {
-                            fileContent = `cat: "${com}" is a directory, not a file`;
-                        } else {
-                            tempObject = tempObject[com];
-                            tempDirectory = `${tempDirectory === '/' ? '' : tempDirectory}/${com}`;
-                        }
-                        // console.log(tempDirectory);
-                    } else fileContent = `cat: file "${command[0]}" does not exist`
-                    // console.log('current Object: ', tempObject)
-                    fileContent = tempObject[command[1].split('/').pop()]
-                    // console.log(fileContent, tempObject, command[1], command[1].split('/'));
-                }
-            })
-            
+        if (command[1]) {
+
+            if (command[1]?.toString()?.split('/')?.length <= 1) {
+                fileContent = this.CurrentObject[command[1]]
+            } else {
+                let currentPath = this.pwd([]);
+                command[1].split('/').forEach((com) => {
+                    if (com === '' /* '/' - root directory */) {
+                        tempObject = { ...this.locateObject['/'] }
+                        tempDirectory = '/'
+                        // this.currentDirectory = '/'
+                        // console.log(this.CurrentObject)
+                    }
+                    else if (com === '.' /* './' - current directory */) tempDirectory = currentPath
+                    else if (com === '..' /* '../' - prev directory */) {
+                        currentPath = currentPath.split('/').slice(0, -1).join('/');
+                        // console.log(currentPath)
+                        tempDirectory = currentPath === '' ? '/' : currentPath;
+                    }
+                    if (com !== '' && com !== '.' && com !== '..') {
+                        if (tempObject[com] !== undefined) {
+                            if (typeof tempObject[com] != 'object') {
+                                fileContent = `cat: "${com}" is a directory, not a file`;
+                            } else {
+                                tempObject = tempObject[com];
+                                tempDirectory = `${tempDirectory === '/' ? '' : tempDirectory}/${com}`;
+                            }
+                            // console.log(tempDirectory);
+                        } else fileContent = `cat: file "${command[0]}" does not exist`
+                        // console.log('current Object: ', tempObject)
+                        fileContent = tempObject[command[1].split('/').pop()]
+                        // console.log(fileContent, tempObject, command[1], command[1].split('/'));
+                    }
+                })
+
+            }
+            return fileContent
         }
+        return '';
         // fileContent == `cat: cant find ${command[1].split('/')}`
         // console.log(fileContent);
-        return fileContent
     }
     static changeDirectory(command) {
         if (command.length > 2 || command.length <= 1) return `cd: expected 1 arguements; got ${command.length - 1}`
