@@ -9,7 +9,6 @@ import Controller from './fileStructure.controller'
 
 
 export default function computeResult(command, setHistory, navigate) {
-sssssssssssss
 	command = command.split(' ');
 	// console.log('getting results for ', command);
 	switch (command[0]) { // check for the root command
