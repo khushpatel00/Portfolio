@@ -8,7 +8,7 @@ function Playground() {
             </h2>
 
             <div className='flex md:w-2/3 duration-300 w-full sm:w-9/10 mx-auto flex-col flex-wrap py-5 md:p-10'>
-                <h3 className='text-4xl font-bold bricolage'> 
+                <h3 className='text-4xl font-bold bricolage'>
                     my Little Contribution
                 </h3>
                 <p className='ps-5 pt-2 text-2xl'>am activily maintaining <a href='https://github.com/T-Dynamos/materialyoucolor-python' className='bg-zinc-100 px-1.5 py-0.5 jet rounded-lg text-black font-medium text-xl underline-offset-3' target='_blank' style={{ textDecoration: 'underline wavy 1px #3f3f46' }}>python-materialyoucolor3</a> as a <a href='https://aur.archlinux.org/packages/python-materialyoucolor3' className='' target='_blank' style={{ textDecoration: 'underline wavy 1px #3f3f46' }}>AUR</a> package</p>
@@ -16,37 +16,43 @@ function Playground() {
 
             <div className='flex md:w-2/3 duration-300 w-full sm:w-9/10 mx-auto flex-row flex-wrap'>
 
-                <div className='flex px-3 md:px-10 duration-300 items-start justify-start align-top flex-wrap flex-row basis-full md:basis-1/3'>
+                <div className='flex px-3 md:px-10 duration-300 items-start justify-start align-top flex-wrap flex-row basis-full'>
                     <h3 className={'text-4xl bricolage font-medium basis-full'}>Languages:</h3>
-                    <div className={'flex flex-col flex-wrap ps-3 text-2xl basis-full'}>
+                    <div className={'flex flex-row flex-wrap xl:gap-x-10 lg:gap-x-15 gap-x-15 duration-300 font-bold ps-3 text-2xl'}>
                         <p>JavaScript</p>
+                        <p>TypeScript</p>
+                        <p>HTML / CSS / MQ</p>
                         <p>C / C++</p>
                         <p>C# (Unity)</p>
                         <p>Java (beginner)</p>
-                        <p>Python (beginner)</p>
+                        {/* <p>Python (beginner)</p> */}
+                        <p>React</p>
+                        <p>NodeJS</p>
+                        <p>NextJS</p>
+                        <p>GSAP</p>
+                        <p>Framer Motion</p>
+                        <p>Locomotive scroll</p>
+                        <p>Tailwind</p>
+                        <p>Postman</p>
+                        <p>Replit</p>
+                        <p>Swift</p>
+                        <p>SwiftUI</p>
                     </div>
                 </div>
 
 
-                <div className='flex px-3 md:px-10 duration-300 items-start justify-start align-top flex-wrap flex-row basis-full md:basis-1/3'>
+                {/* <div className='flex px-3 md:px-10 duration-300 items-start justify-start align-top flex-wrap flex-row basis-full md:basis-1/3'>
                     <h3 className={'text-4xl bricolage font-medium basis-full'}>Tools:</h3>
                     <div className={'flex flex-col flex-wrap ps-3 text-2xl basis-full'}>
-                        <p>GSAP</p>
-                        <p>Framer Motion</p>
-                        <p>Locomotive scroll (beginner)</p>
-                        <p>Tailwind</p>
-                        <p>Postman</p>
-                        <p>Replit</p>
+
                     </div>
                 </div>
                 <div className='flex px-3 md:px-10 duration-300 items-start justify-start align-top flex-wrap flex-row basis-full md:basis-1/3'>
                     <h3 className={'text-4xl bricolage font-medium basis-full'}>Core:</h3>
                     <div className={'flex flex-col flex-wrap ps-3 text-2xl basis-full'}>
-                        <p>React</p>
-                        <p>NodeJS</p>
-                        <p>NextJS</p>
+
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     )

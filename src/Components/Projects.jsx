@@ -26,6 +26,12 @@ let projects = [
     description: "A browser-based window Manager, ie. linux's ricing on browser level",
     cover: 'session0_preview.png'
   },
+  {
+    name: 'MESS',
+    stack: 'NextJS, ExpressJS, Socket.IO, Swift (iOS/iPadOS)',
+    description: "MESS is a RealTime Messaging app, made on top of NextJS, & ExpressJS, with Socket.IO. This project reflects the understanding the WebSocket Implementations, Moreover, this APP is available on the web, and iOS Devices (under development)",
+    cover: ''
+  },
 ]
 
 function Projects() {
@@ -35,11 +41,11 @@ function Projects() {
       <div className='flex w-full md:w-2/3 sm:w-9/10 duration-300 mx-auto flex-row flex-wrap'>
         {projects.map((pr, i) => {
           return (
-            <div key={i} className='basis-full xl:basis-1/2 p-3 duration-300'>
+            <div key={i} className={`basis-full ${i !== projects.length-1 && 'xl:basis-1/2'} p-3 duration-300`}>
               <div className='bg-emerald-50 rounded-2xl text-zinc-900 px-5 py-3 duration-300'>
                 <div className={'flex items-end justify-between flex-wrap'}>
-                  <h3 className='text-3xl jet pe-2'>{pr.name}</h3>
-                  <p className={"text-lg"}>{pr.stack}</p>
+                  <h3 className='text-3xl jet pe-2 font-bold'>{pr.name}</h3>
+                  <p className={"text-lg font-semibold"}>{pr.stack}</p>
                   <a href={"https://github.com/khushpatel00/" + pr.name} target='_blank' className={'text-xl ps-1'} style={{ textDecoration: 'underline wavy 1px #3f3f46' }}>Github</a>
                 </div>
                 {pr.name === 'driveman' ? <video src={'/' + pr.cover} autoPlay muted loop className={'rounded-xl my-2'} > </video> :
