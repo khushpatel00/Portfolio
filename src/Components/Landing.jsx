@@ -1,10 +1,13 @@
+import LocomotiveScroll from 'locomotive-scroll';
 import LaserFlow from './LaserFlow';
-import { useRef } from 'react'; 
+import { useRef } from 'react';
 {/* <div style={{ height: '500px', position: 'relative', overflow: 'hidden' }}>
   <LaserFlow />
 </div> */}
 
 export default function Landing() {
+  const scroll = new LocomotiveScroll();
+
   const revealImgRef = useRef(null);
 
   return (
@@ -13,6 +16,7 @@ export default function Landing() {
         height: '100vh',
         position: 'relative',
         overflow: 'hidden',
+        // backgroundColor: '#120F17'
         backgroundColor: '#faf2e9'
       }}
       onMouseMove={(e) => {
@@ -22,7 +26,7 @@ export default function Landing() {
         const el = revealImgRef.current;
         if (el) {
           el.style.setProperty('--mx', `${x}px`);
-          el.style.setProperty('--my', `${y + rect.height * 0.5}px`);
+          el.style.setProperty('--my', `${y + rect.height * 0}px`);
         }
       }}
       onMouseLeave={() => {
@@ -37,6 +41,7 @@ export default function Landing() {
         horizontalBeamOffset={0.1}
         verticalBeamOffset={0}
         color="#d7afff"
+        // color="#CF9EFF"
         horizontalSizing={0}
         verticalSizing={0}
         wispDensity={1}
@@ -55,8 +60,9 @@ export default function Landing() {
         position: 'absolute',
         top: '50%',
         left: '50%',
-        transform: 'translateX(-50%)',
-        backgroundColor: '#faf2e9',
+        // transform: 'translateX(-50%)',
+        backgroundColor: '#faf2e980',
+        backdropFilter: 'blur(10px)',
         borderRadius: '20px',
         border: '2px solid #e4e4e7',
         display: 'flex',
@@ -65,23 +71,25 @@ export default function Landing() {
         color: 'black',
         fontSize: '2rem',
         zIndex: 6
-      }} className='flex flex-row text-center md:w-[86%] h-[60%] w-full'>
+      }}
+        data-scroll data-scroll-speed="-0.2"
+        className='flex flex-row text-center md:w-[86%] h-[60%] w-full -translate-x-1/2'>
         <div className='md:max-w-1/2 w-full'>
           <p className='leading-7'>Frontend Engineer building motion-first interfaces & interactive systems.</p>
-          <p className='text-sm tracking-tight'>Web · Animation · Game Dev Crossover</p>
+          <p className='text-sm tracking-tight'>Web · Animation · iOS / iPadOS Dev Crossover</p>
         </div>
       </div>
 
       <img
         ref={revealImgRef}
-        src="/images/mesh-custom"
+        src="/images/landingInfo.png"
         alt="Reveal effect"
         style={{
           position: 'absolute',
           width: '100%',
-          top: '-50%',
+          top: '0',
           zIndex: 5,
-          mixBlendMode: 'lighten',
+          mixBlendMode: 'darken',
           opacity: 0.3,
           pointerEvents: 'none',
           '--mx': '-9999px',
@@ -91,7 +99,18 @@ export default function Landing() {
           WebkitMaskRepeat: 'no-repeat',
           maskRepeat: 'no-repeat'
         }}
-
+        horizontalSizing={0.5}
+        verticalSizing={2}
+        wispDensity={1}
+        wispSpeed={15}
+        wispIntensity={5}
+        flowSpeed={0.35}
+        flowStrength={0.25}
+        fogIntensity={0.45}
+        fogScale={0.3}
+        fogFallSpeed={0.6}
+        decay={1.1}
+        falloffStart={1.2}
       />
 
     </div>
